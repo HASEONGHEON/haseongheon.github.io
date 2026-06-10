@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ha Seongheon</title>
+  <style>
+    :root {
+      --bg:#fff;--text:#111;--muted:#888;--dim:#bbb;
+      --border:#e5e5e5;--tag-bg:#f3f3f3;--tag-text:#555;
+    }
+    [data-theme="dark"] {
+      --bg:#0d0d0d;--text:#e8e8e8;--muted:#777;--dim:#444;
+      --border:#1f1f1f;--tag-bg:#1a1a1a;--tag-text:#888;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;}
+    nav{position:fixed;top:0;left:0;right:0;height:48px;display:flex;align-items:center;padding:0 1.5rem;background:var(--bg);border-bottom:1px solid var(--border);z-index:50;transition:background .25s,border-color .25s;}
+    .nav-name{font-size:.875rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;transition:color .25s;}
+    .nav-right{margin-left:auto;display:flex;gap:.375rem;}
+    .ctrl{height:28px;padding:0 .65rem;background:none;border:1px solid var(--border);border-radius:6px;color:var(--muted);font:600 .7rem/1 -apple-system,sans-serif;letter-spacing:.04em;cursor:pointer;transition:border-color .2s,color .2s;display:inline-flex;align-items:center;justify-content:center;}
+    .ctrl:hover{border-color:var(--dim);color:var(--text);}
+    .ctrl-icon{width:28px;padding:0;}
+    main{max-width:640px;margin:0 auto;padding:7rem 1.5rem 6rem;}
+    .site-header{margin-bottom:3rem;}
+    .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:1.25rem;border:1px solid var(--border);transition:border-color .25s;}
+    .site-header h1{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:var(--text);margin-bottom:.25rem;transition:color .25s;}
+    .sub{font-size:.875rem;color:var(--muted);transition:color .25s;}
+    .bio{margin-top:1.25rem;font-size:.9375rem;color:var(--text);line-height:1.75;transition:color .25s;}
+    .links{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;font-size:.8125rem;}
+    .links a{color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:color .2s;}
+    .links a:hover{color:var(--text);}
+    section{margin-bottom:2.75rem;}
+    .section-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:1.25rem;transition:color .25s;}
+    .entry{margin-bottom:1.75rem;}
+    .entry-header{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.2rem;}
+    .entry-title{font-size:.9375rem;font-weight:600;color:var(--text);letter-spacing:-.01em;transition:color .25s;}
+    .entry-date{font-size:.775rem;color:var(--muted);white-space:nowrap;transition:color .25s;}
+    .entry-sub{font-size:.8125rem;color:var(--muted);margin-bottom:.5rem;transition:color .25s;}
+    .entry-body{font-size:.875rem;color:var(--muted);line-height:1.75;transition:color .25s;}
+    .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;}
+    .tag{font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);transition:background .25s,color .25s;letter-spacing:.01em;}
+    hr{border:none;border-top:1px solid var(--border);margin:2.75rem 0;transition:border-color .25s;}
+    .skill-group{margin-bottom:1rem;}
+    .skill-label{font-size:.75rem;font-weight:600;color:var(--dim);margin-bottom:.4rem;transition:color .25s;}
+    footer{max-width:640px;margin:0 auto;padding:0 1.5rem 3rem;font-size:.775rem;color:var(--dim);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;transition:color .25s;}
+    footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
+    footer a:hover{color:var(--muted);}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-name" id="nav-name"></a>
+  <div class="nav-right">
+    <button class="ctrl" id="btn-lang" onclick="toggleLang()">KO</button>
+    <button class="ctrl ctrl-icon" id="btn-theme" onclick="toggleTheme()" aria-label="toggle theme">
+      <svg id="icon-moon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main"></main>
+
+<footer id="footer"></footer>
+
+<script src="data.js"></script>
+<script>
+// ── SVG 아이콘 ─────────────────────────────────────────
+const ICONS = {
+  github:   `<svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>`,
+  linkedin: `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
+  email:    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
+};
+
+// ── 섹션 레이블 ───────────────────────────────────────
+const SECTION_LABELS = {
+  experience: { ko: "경력",   en: "Experience" },
+  projects:   { ko: "프로젝트", en: "Projects"   },
+  skills:     { ko: "기술",   en: "Skills"      }
+};
+
+// ── 언어 상태 ─────────────────────────────────────────
+let lang = 'en';
+
+// ── 텍스트 헬퍼 (string | {ko,en} 모두 처리) ────────
+function t(val) {
+  if (!val) return '';
+  if (typeof val === 'string') return val;
+  return val[lang] || val.en || val.ko || '';
+}
+
+// ── 태그 렌더 ─────────────────────────────────────────
+function renderTags(tags) {
+  if (!tags || tags.length === 0) return '';
+  return `<div class="tags">${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>`;
+}
+
+// ── 항목(entry) 렌더 ──────────────────────────────────
+function renderEntry(item) {
+  const title = t(item.title);
+  const sub   = item.sub  ? `<p class="entry-sub">${t(item.sub)}</p>` : '';
+  const body  = item.body ? `<div class="entry-body">${t(item.body)}</div>` : '';
+  const date  = item.date ? `<span class="entry-date">${item.date}</span>` : '';
+  return `
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">${title}</span>
+        ${date}
+      </div>
+      ${sub}
+      ${body}
+      ${renderTags(item.tags)}
+    </div>`;
+}
+
+// ── 스킬 섹션 렌더 ────────────────────────────────────
+function renderSkills() {
+  return DATA.skills.map(group => `
+    <div class="skill-group">
+      <p class="skill-label">${group.label}</p>
+      ${renderTags(group.tags)}
+    </div>`).join('');
+}
+
+// ── 섹션 렌더 ─────────────────────────────────────────
+function renderSection(key) {
+  const label = t(SECTION_LABELS[key]);
+  let inner = '';
+  if (key === 'skills') {
+    inner = renderSkills();
+  } else {
+    inner = (DATA[key] || []).map(renderEntry).join('');
+  }
+  return `<section><p class="section-label">${label}</p>${inner}</section>`;
+}
+
+// ── 링크 렌더 ─────────────────────────────────────────
+function renderLinks() {
+  return DATA.links.map(l =>
+    `<a href="${l.url}" ${l.url.startsWith('mailto') ? '' : 'target="_blank" rel="noopener"'}>
+      ${ICONS[l.icon] || ''}${l.label}
+    </a>`
+  ).join('');
+}
+
+// ── 전체 페이지 렌더 ──────────────────────────────────
+function render() {
+  const p = DATA.profile;
+
+  // nav name
+  document.getElementById('nav-name').textContent = t(p.name);
+  document.title = t(p.name);
+
+  // header
+  const photo = p.photo
+    ? `<img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" />`
+    : '';
+
+  // sections
+  const sections = DATA.sections
+    .map((key, i) => renderSection(key) + (i < DATA.sections.length - 1 ? '<hr>' : ''))
+    .join('');
+
+  document.getElementById('main').innerHTML = `
+    <header class="site-header">
+      ${photo}
+      <h1>${t(p.name)}</h1>
+      <p class="sub">${t(p.role)}</p>
+      <p class="bio">${t(p.bio)}</p>
+      <div class="links">${renderLinks()}</div>
+    </header>
+    ${sections}`;
+
+  // footer
+  const name = t(p.name);
+  const ghLink = DATA.links.find(l => l.icon === 'github');
+  document.getElementById('footer').innerHTML = `
+    <span>© ${new Date().getFullYear()} ${name}</span>
+    ${ghLink ? `<a href="${ghLink.url}" target="_blank" rel="noopener">${ghLink.url.replace('https://', '')}</a>` : ''}`;
+}
+
+// ── 언어 토글 ─────────────────────────────────────────
+function toggleLang() {
+  lang = lang === 'en' ? 'ko' : 'en';
+  document.getElementById('btn-lang').textContent = lang === 'en' ? 'KO' : 'EN';
+  document.documentElement.lang = lang;
+  render();
+}
+
+// ── 테마 토글 ─────────────────────────────────────────
+let theme = 'dark';
+function toggleTheme() {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme;
+  document.getElementById('icon-moon').style.display = theme === 'dark' ? 'block' : 'none';
+  document.getElementById('icon-sun').style.display  = theme === 'light' ? 'block' : 'none';
+}
+
+// ── 초기 렌더 ─────────────────────────────────────────
+render();
+</script>
+</body>
+</html>
