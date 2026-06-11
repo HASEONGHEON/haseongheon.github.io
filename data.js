@@ -27,7 +27,7 @@ const DATA = {
     {
       title:  "LG Electronics",
       date:   "2025.02 — Present",
-      sub:    { ko: "VS사업본부 AX실 · Platform Engineer", en: "VS Div. AX Lab · Platform Engineer" },
+      sub:    { ko: "VS사업본부 AX실 · llmOps Engineer", en: "LGE VS Company. VS AX Department · llmOps Engineer" },
       body:   {
         ko: "AI 개발 플랫폼 설계 및 EKS 기반 인프라 운영. LLM 서비스 게이트웨이 구축, 사내 클라우드 개발 환경 자동화.",
         en: "Designing AI development platforms and operating EKS-based infrastructure. Building LLM service gateways and automating internal cloud development environments."
