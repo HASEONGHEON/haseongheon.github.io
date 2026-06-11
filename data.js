@@ -4,19 +4,21 @@ const DATA = {
   profile: {
     photo: "profile.png",          // 사진 파일명. 없애려면 null
     name:  { ko: "하성헌", en: "Ha Seongheon" },
-    role:  { ko: "Platform Engineer · AI Infrastructure",
-             en: "Platform Engineer · AI Infrastructure" },
-    bio:   {
-      ko: "LG Electronics VS본부 AX실에서 AI 개발 플랫폼과 LLM 인프라를 설계·운용합니다. EKS 위에서 에이전트 배포 파이프라인, 사내 LLM API 서비스, 클라우드 개발 환경을 구축하고 있습니다.",
-      en: "I design and operate AI development platforms and LLM infrastructure at LG Electronics VS AX Lab. Building agent deployment pipelines, internal LLM API services, and cloud development environments on EKS."
+    role:  {
+      ko: "Platform Engineer · AI Infrastructure",
+      en: "Platform Engineer · AI Infrastructure"
+    },
+    bio: {
+      ko: "LG Electronics VS본부 AX실에서 AI 개발 플랫폼과 LLM 인프라를 설계·운영하고 있습니다. EKS 기반 클라우드 클러스터 위에서 에이전트/MCP 자동 배포 플랫폼, 사내 LLM API 게이트웨이, 클라우드 개발 환경 및 운영 자동화 체계를 구축하고 있습니다.",
+      en: "I design and operate AI development platforms and LLM infrastructure at LG Electronics VS AX Department. On EKS-based cloud clusters, I build agent/MCP auto-deployment platforms, internal LLM API gateways, cloud development environments, and operational automation systems."
     }
   },
 
   // ── 링크 (순서대로 표시, 없애려면 해당 줄 삭제) ─────────
   links: [
-    { label: "GitHub",   url: "https://github.com/HASEONGHEON",                                        icon: "github" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/%EC%84%B1%ED%97%8C-%ED%95%98-162794317/",   icon: "linkedin" },
-    { label: "Email",    url: "mailto:123skfro@gamil.com",                                              icon: "email" }
+    { label: "GitHub",   url: "https://github.com/HASEONGHEON",                                      icon: "github" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/%EC%84%B1%ED%97%8C-%ED%95%98-162794317/", icon: "linkedin" },
+    { label: "Email",    url: "mailto:[123skfro@gmail.com](mailto:123skfro@gmail.com)",               icon: "email" }
   ],
 
   // ── 섹션 순서 (원하는 순서로 배열, 없애려면 해당 줄 삭제) ─
@@ -25,68 +27,73 @@ const DATA = {
   // ── 경력 ──────────────────────────────────────────────
   experience: [
     {
-      title:  "LG Electronics",
-      date:   "2025.02 — Present",
-      sub:    { ko: "VS사업본부 AX실 · llmOps Engineer", en: "LGE VS Company. VS AX Department · llmOps Engineer" },
-      body:   {
-        ko: "AI 개발 플랫폼 설계 및 EKS 기반 인프라 운영. LLM 서비스 게이트웨이 구축, 사내 클라우드 개발 환경 자동화.",
-        en: "Designing AI development platforms and operating EKS-based infrastructure. Building LLM service gateways and automating internal cloud development environments."
+      title: "LG Electronics",
+      date:  "2025.02 — Present",
+      sub: {
+        ko: "VS사업본부 AX실 · LLMOps Engineer",
+        en: "VS Company, AX Department · LLMOps Engineer"
       },
-      tags: []   // 경력에는 태그 없음. 필요하면 ["EKS", "Kubernetes"] 처럼 추가
+      body: {
+        ko: "AI 개발 플랫폼과 EKS 기반 클라우드 인프라를 설계·운영하고 있습니다. 사내 LLM API 게이트웨이, 에이전트/MCP 자동 배포 플랫폼, 클라우드 개발 환경 자동화 체계를 구축했으며, VS사업본부 AI Agent 구축 실무자 과정의 사내 강사로도 활동하고 있습니다.",
+        en: "Designing and operating AI development platforms and EKS-based cloud infrastructure. Built an internal LLM API gateway, an agent/MCP auto-deployment platform, and automation systems for cloud development environments. Also serving as an internal instructor for the VS Company's AI Agent hands-on training program."
+      },
+      tags: []
     }
   ],
 
   // ── 프로젝트 ────────────────────────────────────────────
   projects: [
     {
-      title: "AX-Dev Platform",
-      date:  "2026",
-      sub:   { ko: "AI Agent / MCP 서버 자동 배포 플랫폼", en: "AI Agent / MCP Server Auto-Deploy Platform" },
-      body:  {
-        ko: "Coder 기반 클라우드 IDE와 GitLab CI/ArgoCD 파이프라인을 연결해 개발 환경의 코드를 EKS에 자동 배포. Kubernetes DNS 기반 동적 라우팅으로 멀티 에이전트 환경을 구성하고 마켓플레이스에서 서비스를 공유할 수 있도록 설계했습니다.",
-        en: "Connected Coder-based cloud IDE with GitLab CI/ArgoCD pipeline to auto-deploy code to EKS. Designed multi-agent environment using Kubernetes DNS-based dynamic routing with a marketplace for service sharing."
+      title: { ko: "Cloud Engineering", en: "Cloud Engineering" },
+      date:  "2025.06 - Present",
+      sub: {
+        ko: "VS사업본부 AX실 · 클라우드 인프라 운영 및 플랫폼 엔지니어링",
+        en: "VS Company, AX Department · Cloud Infrastructure Operations and Platform Engineering"
+      },
+      body: {
+        ko: "EKS 기반 클라우드 클러스터의 운영 안정성과 확장성을 확보하기 위한 인프라 운영 업무를 담당하고 있습니다. Kubernetes 워크로드 운영, 모니터링 및 로그 파이프라인 구성, 클러스터 리소스 관리, 배포 환경 표준화 등을 통해 AI 개발 플랫폼과 LLM 서비스가 안정적으로 실행될 수 있는 기반을 구축하고 있습니다.",
+        en: "Responsible for operating EKS-based cloud clusters with a focus on reliability and scalability. Managing Kubernetes workloads, monitoring and logging pipelines, cluster resources, and standardized deployment environments to provide a stable foundation for AI development platforms and LLM services."
+      },
+      tags: ["EKS", "Kubernetes", "Prometheus", "Grafana", "Helm"]
+    },
+    {
+      title: { ko: "AX-Dev Platform", en: "AX-Dev Platform" },
+      date:  "2025.12 - Present",
+      sub: {
+        ko: "클라우드 IDE 개발 환경 및 AI Agent / MCP 서버 자동 배포 플랫폼",
+        en: "Cloud IDE Development Environment and AI Agent / MCP Server Auto-Deployment Platform"
+      },
+      body: {
+        ko: "클라우드 클러스터 기반 개발·배포 플랫폼에서 사용자가 에이전트와 MCP의 비즈니스 로직 개발에만 집중할 수 있도록, 개발 환경을 Docker 이미지 스냅샷으로 생성하고 이를 EKS에 자동 배포하는 파이프라인을 구축했습니다. Kubernetes DNS 기반 동적 라우팅을 적용하여 배포된 에이전트와 MCP 서비스를 사용자별·환경별로 연결했으며, 다수 사용자가 클러스터 내에서 개발·배포·실행 환경을 공유할 수 있는 멀티 에이전트 운영 구조를 구현했습니다.",
+        en: "Built a cloud cluster-based development and deployment platform that allows users to focus only on implementing business logic for agents and MCP servers. The platform captures development environments as Docker image snapshots and automatically deploys them to EKS. Implemented Kubernetes DNS-based dynamic routing to connect deployed agents and MCP services by user and environment, enabling a multi-agent operating model where multiple users can share development, deployment, and runtime environments within the cluster."
       },
       tags: ["Kubernetes", "Coder", "ArgoCD", "GitLab CI", "Docker", "EKS"]
     },
     {
       title: { ko: "LLM API 서비스", en: "LLM API Service" },
-      date:  "2026",
-      sub:   { ko: "사내 LLM 통합 게이트웨이", en: "Internal LLM Unified Gateway" },
-      body:  {
-        ko: "LiteLLM 프록시로 Claude, GPT, Qwen 등 여러 모델을 표준 OpenAI 포맷으로 통합 제공. 품의 → Jira 티켓 → 모델 할당 자동화 워크플로우와 토큰 기반 과금 시스템 구축.",
-        en: "Unified multiple models (Claude, GPT, Qwen) via LiteLLM proxy in standard OpenAI format. Built automated workflow from approval to Jira ticket to model assignment, with token-based billing."
+      date:  "2026.01 - Present",
+      sub: {
+        ko: "사내 LLM 통합 게이트웨이",
+        en: "Internal LLM Unified Gateway"
       },
-      tags: ["LiteLLM", "FastAPI", "Kubernetes", "Inf2"]
+      body: {
+        ko: "LiteLLM 프록시를 기반으로 Claude, GPT, Qwen 및 자체 추론 모델 등 다양한 LLM 엔드포인트를 표준 OpenAI API 포맷으로 통합 제공하는 사내 LLM 게이트웨이를 구축했습니다. 품의, Jira 티켓, 모델 권한 할당으로 이어지는 사용 신청 및 승인 워크플로우를 자동화했으며, 토큰 사용량 기반 과금 및 사용량 추적 체계를 함께 구현했습니다.",
+        en: "Built an internal LLM gateway using LiteLLM proxy to provide multiple LLM endpoints, including Claude, GPT, Qwen, and internal inference models, through a standard OpenAI-compatible API format. Automated the request and approval workflow from internal approval to Jira ticket creation and model permission assignment, and implemented token-based billing and usage tracking."
+      },
+      tags: ["LiteLLM", "FastAPI", "Kubernetes", "OpenAI API", "Inf2"]
     },
     {
-      title: "AWS LLM Infra",
-      date:  "2026",
-      sub:   { ko: "Inferentia2 기반 LLM 서빙 인프라", en: "Inferentia2-based LLM Serving Infrastructure" },
-      body:  {
-        ko: "AWS Inf2 Neuron 칩 기반 LLM 추론 환경 구성. FSx for Lustre 고성능 스토리지와 S3 모델 레지스트리를 연결해 대형 모델 서빙 파이프라인 구축.",
-        en: "Built LLM inference environment on AWS Inf2 Neuron chips. Connected FSx for Lustre high-performance storage with S3 model registry for large model serving pipeline."
+      title: { ko: "CLI Agent", en: "CLI Agent" },
+      date:  "2026.05 - Present",
+      sub: {
+        ko: "opencode 기반 사내 CLI 에이전트",
+        en: "Internal CLI Agent Based on opencode"
       },
-      tags: ["Inf2", "Neuron SDK", "FSx", "S3", "EKS"]
-    },
-    {
-      title: "OpenClaw",
-      date:  "2026",
-      sub:   { ko: "오픈소스 자율형 AI 에이전트 플랫폼", en: "Open-source Autonomous AI Agent Platform" },
-      body:  {
-        ko: '"Your assistant. Your machine. Your rules." 로컬/VPS에서 구동되는 자율형 AI 에이전트. 메신저 기반 제어와 Skills 플러그인 아키텍처로 확장 가능한 구조.',
-        en: '"Your assistant. Your machine. Your rules." Autonomous AI agent running on local/VPS. Messenger-based control with extensible Skills plugin architecture.'
+      body: {
+        ko: "opencode 기반 사내 CLI 에이전트를 구축하여 로컬 및 VPS 환경에서 자율적으로 실행할 수 있도록 구성했습니다. 사내 LLM API와 손쉽게 연동할 수 있으며, CLI 기반 개발·운영 작업을 자동화하고 메신저를 통한 원격 제어를 지원합니다. 또한 확장 가능한 Skills 플러그인 아키텍처를 적용하여 다양한 내부 업무 시나리오에 맞게 기능을 확장할 수 있도록 설계했습니다.",
+        en: "Built an internal CLI agent based on opencode that can run autonomously on local machines and VPS environments. It integrates easily with the internal LLM API, automates CLI-based development and operations tasks, and supports remote control through messenger-based interfaces. The agent also adopts an extensible Skills plugin architecture, allowing it to be expanded for various internal workflow scenarios."
       },
-      tags: ["Python", "Telegram", "Docker"]
-    },
-    {
-      title: "Agent Ops",
-      date:  "2026",
-      sub:   { ko: "AI 에이전트 운영 플랫폼", en: "AI Agent Operations Platform" },
-      body:  {
-        ko: "AI 에이전트 생명주기 관리, 멀티 에이전트 오케스트레이션, 모니터링 및 로그 파이프라인 구축.",
-        en: "AI agent lifecycle management, multi-agent orchestration, monitoring and log pipeline construction."
-      },
-      tags: ["EKS", "Prometheus", "Grafana"]
+      tags: ["Python", "Telegram", "Docker", "LLM API", "Skills"]
     }
   ],
 
@@ -94,19 +101,19 @@ const DATA = {
   skills: [
     {
       label: "Cloud & Infrastructure",
-      tags:  ["AWS EKS", "EC2", "S3", "FSx", "Terraform", "Karpenter"]
+      tags: ["AWS EKS", "EC2", "S3", "FSx", "Terraform", "Karpenter"]
     },
     {
       label: "Container & GitOps",
-      tags:  ["Kubernetes", "Docker", "Helm", "ArgoCD", "GitLab CI"]
+      tags: ["Kubernetes", "Docker", "Helm", "ArgoCD", "GitLab CI"]
     },
     {
-      label: "AI / ML",
-      tags:  ["LiteLLM", "Inf2 / Neuron", "Qwen", "Claude API", "Fine-tuning"]
+      label: "AI / ML Infrastructure",
+      tags: ["LiteLLM", "Inf2 / Neuron", "Qwen", "Claude API", "OpenAI API", "Fine-tuning"]
     },
     {
-      label: "DevOps & Security",
-      tags:  ["OIDC / SSO", "ExternalSecret", "Coder", "Python", "Bash"]
+      label: "DevOps & Automation",
+      tags: ["OIDC / SSO", "ExternalSecret", "Coder", "Python", "Bash"]
     }
   ]
 

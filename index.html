@@ -31,7 +31,14 @@
     .ctrl-icon{width:28px;padding:0;}
     main{max-width:640px;margin:0 auto;padding:7rem 1.5rem 6rem;}
     .site-header{margin-bottom:3rem;}
-    .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:1.25rem;border:1px solid var(--border);transition:border-color .25s;}
+    .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:1.25rem;border:1px solid var(--border);transition:border-color .25s,transform .2s,box-shadow .2s;cursor:pointer;}
+    .profile-photo:hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(0,0,0,.18);}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(6px);}
+    .lightbox.open{opacity:1;pointer-events:all;}
+    .lightbox img{max-width:min(400px,85vw);max-height:85vh;border-radius:50%;object-fit:cover;object-position:center top;box-shadow:0 8px 48px rgba(0,0,0,.5);transform:scale(.85);transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+    .lightbox.open img{transform:scale(1);}
+    .lightbox-close{position:absolute;top:1.25rem;right:1.25rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    .lightbox-close:hover{background:rgba(255,255,255,.25);}
     .site-header h1{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:var(--text);margin-bottom:.25rem;transition:color .25s;}
     .sub{font-size:.875rem;color:var(--muted);transition:color .25s;}
     .bio{margin-top:1.25rem;font-size:.9375rem;color:var(--text);line-height:1.75;transition:color .25s;}
@@ -163,7 +170,7 @@ function render() {
 
   // header
   const photo = p.photo
-    ? `<img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" />`
+    ? `<img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" onclick="openLightbox('${p.photo}')" />`
     : '';
 
   // sections
@@ -208,6 +215,28 @@ function toggleTheme() {
 
 // ── 초기 렌더 ─────────────────────────────────────────
 render();
+
+// ── 라이트박스 ────────────────────────────────────────
+(function() {
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = '<button class="lightbox-close" aria-label="닫기">✕</button><img />';
+  document.body.appendChild(box);
+
+  const img = box.querySelector('img');
+  const closeBtn = box.querySelector('.lightbox-close');
+
+  function close() { box.classList.remove('open'); }
+
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', function(e) { if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+
+  window.openLightbox = function(src) {
+    img.src = src;
+    box.classList.add('open');
+  };
+})();
 </script>
 </body>
 </html>
