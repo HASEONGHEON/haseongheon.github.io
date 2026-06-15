@@ -126,7 +126,10 @@
       section{margin-bottom:1.5rem;}
       .entry, .research-block, .pub-card, figure.media{break-inside:avoid;page-break-inside:avoid;}
       hr{margin:1.25rem 0;}
+      figure.media video{display:none !important;}
+      .video-thumbnail{display:block !important;}
     }
+    .video-thumbnail{display:none;width:100%;height:auto;}
   </style>
 </head>
 <body>
@@ -369,6 +372,37 @@ function toggleTheme() {
 
 // ── 초기 렌더 ─────────────────────────────────────────
 render();
+
+// ── PDF용 영상 썸네일 캡처 ────────────────────────────
+function captureFrame(video) {
+  try {
+    const c = document.createElement('canvas');
+    c.className = 'video-thumbnail';
+    c.width = video.videoWidth || 640;
+    c.height = video.videoHeight || 360;
+    c.getContext('2d').drawImage(video, 0, 0, c.width, c.height);
+    video.parentNode.insertBefore(c, video);
+  } catch(e) {}
+}
+document.querySelectorAll('figure.media video').forEach(function(video) {
+  const isDemo2 = video.src.includes('demo2');
+  if (isDemo2) {
+    video.addEventListener('loadedmetadata', function() {
+      video.currentTime = video.duration;
+    });
+    video.addEventListener('seeked', function() {
+      if (this._thumbDone) return;
+      this._thumbDone = true;
+      captureFrame(video);
+    });
+  } else {
+    video.addEventListener('canplay', function() {
+      if (this._thumbDone) return;
+      this._thumbDone = true;
+      captureFrame(video);
+    });
+  }
+});
 
 </script>
 </body>
