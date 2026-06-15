@@ -3,7 +3,7 @@ const DATA = {
   // ── 프로필 ──────────────────────────────────────────────
   profile: {
     photo: "assets/profile.png",          // 사진 파일명. 없애려면 null
-    name:  { ko: "하성헌", en: "Ha Seongheon" },
+    name:  { ko: "하성헌", en: "Ha SeongHeon" },
     role:  {
       ko: "Platform Engineer · AI Infrastructure",
       en: "Platform Engineer · AI Infrastructure"

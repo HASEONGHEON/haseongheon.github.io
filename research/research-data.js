@@ -3,7 +3,7 @@ const DATA = {
   // ── 프로필 ──────────────────────────────────────────────
   profile: {
     photo: "profile.png",
-    name:  { ko: "하성헌", en: "Ha Seongheon" },
+    name:  { ko: "하성헌", en: "Ha SeongHeon" },
     role:  {
       ko: "LiDAR · Vision · Multi-modal AI Researcher",
       en: "LiDAR · Vision · Multi-modal AI Researcher"
@@ -61,8 +61,8 @@ const DATA = {
     },
     meta: [
       {
-        ko: `Ha, Seongheon, et al., "Interdimensional Knowledge Transfer for Semantic Segmentation on LiDAR Point Clouds," IEEE Robotics and Automation Letters (RA-L), 2024.`,
-        en: `Ha, Seongheon, et al., "Interdimensional Knowledge Transfer for Semantic Segmentation on LiDAR Point Clouds," IEEE Robotics and Automation Letters (RA-L), 2024.`,
+        ko: `Ha, SeongHeon, et al., "Interdimensional Knowledge Transfer for Semantic Segmentation on LiDAR Point Clouds," IEEE Robotics and Automation Letters (RA-L), 2024.`,
+        en: `Ha, SeongHeon, et al., "Interdimensional Knowledge Transfer for Semantic Segmentation on LiDAR Point Clouds," IEEE Robotics and Automation Letters (RA-L), 2024.`,
         url: "https://ieeexplore.ieee.org/document/10592641"
       }
     ],
@@ -214,8 +214,8 @@ const DATA = {
       },
       meta: [
         {
-          ko: `Ha, Seongheon, et al., "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks," ICEIC, 2025.`,
-          en: `Ha, Seongheon, et al., "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks," ICEIC, 2025.`
+          ko: `Ha, SeongHeon, et al., "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks," ICEIC, 2025.`,
+          en: `Ha, SeongHeon, et al., "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks," ICEIC, 2025.`
         }
       ],
       topics: [

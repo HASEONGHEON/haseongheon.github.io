@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ha Seongheon</title>
+  <title>Ha SeongHeon</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon-64.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
@@ -60,8 +60,6 @@
     footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
     footer a:hover{color:var(--muted);}
     .nav-logo{width:22px;height:22px;border-radius:5px;display:block;flex-shrink:0;}
-    .nav-research{font-size:.75rem;color:var(--dim);text-decoration:none;margin-right:.25rem;letter-spacing:.01em;transition:color .2s;}
-    .nav-research:hover{color:var(--muted);}
   </style>
 </head>
 <body>
@@ -70,7 +68,6 @@
   <img src="assets/icons/favicon-32.png" class="nav-logo" alt="logo">
   <a href="/" class="nav-name" id="nav-name"></a>
   <div class="nav-right">
-    <a href="research/" class="nav-research" id="nav-research">M.S. Research</a>
     <button class="ctrl" id="btn-pdf" onclick="window.print()">PDF</button>
     <button class="ctrl" id="btn-lang" onclick="toggleLang()">KO</button>
     <button class="ctrl ctrl-icon" id="btn-theme" onclick="toggleTheme()" aria-label="toggle theme">
@@ -205,7 +202,6 @@ function render() {
 function toggleLang() {
   lang = lang === 'en' ? 'ko' : 'en';
   document.getElementById('btn-lang').textContent = lang === 'en' ? 'KO' : 'EN';
-  document.getElementById('nav-research').textContent = lang === 'en' ? 'M.S. Research' : '석사 연구 경력';
   document.documentElement.lang = lang;
   render();
 }

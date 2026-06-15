@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ha Seongheon — Research Portfolio</title>
+  <title>Ha SeongHeon — Research Portfolio</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -89,18 +89,16 @@
 
     figure.media{margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg);transition:border-color .25s,background .25s;}
     figure.media img{display:block;width:100%;height:auto;padding:0.5rem;box-sizing:border-box;}
-    figure.media video{display:block;width:100%;height:auto;}
+    figure.media video{display:block;width:100%;height:auto;aspect-ratio:16/9;}
     figure.media figcaption{font-size:.75rem;color:var(--dim);padding:.55rem .85rem;border-top:1px solid var(--border);text-align:center;line-height:1.6;transition:color .25s,border-color .25s;}
-    .media-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;}
-    .media-row figure.media{flex:1 1 240px;margin-top:0;display:flex;flex-direction:column;}
-    .media-row figure.media img,.media-row figure.media video{width:100%;height:auto;margin-top:auto;}
-    .media-row figure.media figcaption{margin-top:auto;}
+    .media-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:flex-start;}
+    .media-row figure.media{flex:1 1 240px;margin-top:0;}
     .media-row figure.media-video{flex:0 0 36%;}
     .legend-strip{display:flex;gap:.4rem .5rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:.75rem;}
     .legend-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);letter-spacing:.01em;transition:background .25s,color .25s;}
     .legend-chip .swatch{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
     figure.media.formula-card{display:flex;flex-direction:column;}
-    .formula-eqs{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.85rem;padding:1.5rem 1.25rem;font-family:'Cambria Math','STIX Two Math',Georgia,'Times New Roman',serif;font-size:.85rem;line-height:1.6;color:var(--text);}
+    .formula-eqs{display:flex;flex-direction:column;gap:.85rem;padding:1.25rem 1.25rem;font-family:'Cambria Math','STIX Two Math',Georgia,'Times New Roman',serif;font-size:.85rem;line-height:1.6;color:var(--text);}
     .formula-line{white-space:nowrap;overflow-x:auto;}
     .formula-cont{padding-left:2.3em;}
     .formula-eqs .idx,.formula-eqs sup{font-size:.7em;}
@@ -133,7 +131,7 @@
 <nav>
   <div class="nav-left">
     <img src="favicon-32.png" class="nav-logo" alt="logo">
-    <a href="../" class="nav-name">Ha Seongheon</a>
+    <a href="../" class="nav-name">Ha SeongHeon</a>
     <span class="nav-sep">/</span>
     <span class="nav-page" id="nav-page"></span>
   </div>
@@ -339,7 +337,7 @@ function render() {
       ${photo}
       <h1>${t(p.name)}</h1>
       <p class="sub">${t(p.role)}</p>
-      <p class="page-meta">${p.period} · ${t(PAGE_LABEL)}</p>
+      ${p.period ? `<p class="page-meta">${p.period} · ${t(PAGE_LABEL)}</p>` : ''}
       <p class="bio">${t(p.bio)}</p>
       <div class="links">${renderLinks()}</div>
     </header>
