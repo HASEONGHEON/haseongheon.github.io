@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ha Seongheon — Research Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4JXDX27P0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4JXDX27P0');
+  </script>
+  <style>
+    :root {
+      --bg:#fff;--text:#111;--muted:#888;--dim:#bbb;
+      --border:#e5e5e5;--tag-bg:#f3f3f3;--tag-text:#555;
+    }
+    [data-theme="dark"] {
+      --bg:#0d0d0d;--text:#e8e8e8;--muted:#777;--dim:#444;
+      --border:#1f1f1f;--tag-bg:#1a1a1a;--tag-text:#888;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;}
+    nav{position:fixed;top:0;left:0;right:0;height:48px;display:flex;align-items:center;padding:0 1.5rem;background:var(--bg);border-bottom:1px solid var(--border);z-index:50;transition:background .25s,border-color .25s;}
+    .nav-left{display:flex;align-items:center;gap:.5rem;min-width:0;}
+    .nav-logo{width:22px;height:22px;border-radius:5px;display:block;flex-shrink:0;}
+    .nav-name{font-size:.875rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-.01em;transition:color .25s;white-space:nowrap;}
+    .nav-name:hover{color:var(--muted);}
+    .nav-sep{color:var(--dim);font-size:.8rem;}
+    .nav-page{font-size:.8125rem;color:var(--muted);font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .nav-right{margin-left:auto;display:flex;gap:.375rem;flex-shrink:0;}
+    .ctrl{height:28px;padding:0 .65rem;background:none;border:1px solid var(--border);border-radius:6px;color:var(--muted);font:600 .7rem/1 -apple-system,sans-serif;letter-spacing:.04em;cursor:pointer;transition:border-color .2s,color .2s;display:inline-flex;align-items:center;justify-content:center;}
+    .ctrl:hover{border-color:var(--dim);color:var(--text);}
+    .ctrl-icon{width:28px;padding:0;}
+    main{max-width:640px;margin:0 auto;padding:7rem 1.5rem 6rem;}
+    .site-header{margin-bottom:3rem;}
+    .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:1.25rem;border:1px solid var(--border);transition:border-color .25s,opacity .2s;}
+    .profile-photo:hover{opacity:.8;}
+    .site-header h1{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:var(--text);margin-bottom:.25rem;transition:color .25s;}
+    .sub{font-size:.875rem;color:var(--muted);transition:color .25s;}
+    .page-meta{font-size:.8125rem;color:var(--dim);margin-top:.35rem;letter-spacing:.02em;transition:color .25s;}
+    .bio{margin-top:1.25rem;font-size:.9375rem;color:var(--text);line-height:1.75;transition:color .25s;}
+    .links{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;font-size:.8125rem;}
+    .links a{color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:color .2s;}
+    .links a:hover{color:var(--text);}
+    section{margin-bottom:2.75rem;}
+    .section-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:1.25rem;transition:color .25s;}
+    .entry{margin-bottom:1.75rem;}
+    .entry:last-child{margin-bottom:0;}
+    .entry-header{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.2rem;}
+    .entry-title{font-size:.9375rem;font-weight:600;color:var(--text);letter-spacing:-.01em;transition:color .25s;}
+    .entry-date{font-size:.775rem;color:var(--muted);white-space:nowrap;transition:color .25s;}
+    .entry-sub{font-size:.8125rem;color:var(--muted);margin-bottom:.5rem;transition:color .25s;}
+    .entry-sub a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,border-color .2s;}
+    .entry-sub a:hover{color:var(--text);border-color:var(--muted);}
+    .entry-body{font-size:.875rem;color:var(--muted);line-height:1.75;transition:color .25s;}
+    .entry-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;}
+    .entry-sub-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem;}
+    .pub-venue{font-style:italic;}
+    .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;}
+    .tag{font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);transition:background .25s,color .25s;letter-spacing:.01em;}
+    hr{border:none;border-top:1px solid var(--border);margin:2.75rem 0;transition:border-color .25s;}
+    footer{max-width:640px;margin:0 auto;padding:0 1.5rem 3rem;font-size:.775rem;color:var(--dim);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;transition:color .25s;}
+    footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
+    footer a:hover{color:var(--muted);}
+
+    /* ── Research portfolio additions ───────────────────── */
+    .status{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:600;letter-spacing:.02em;color:var(--muted);white-space:nowrap;}
+    .status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--dim);flex-shrink:0;}
+    .status-done::before{background:#3b9b5e;}
+    .status-progress::before{background:#e0a23c;}
+
+    .pub-card{margin:1rem 0 1.25rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--tag-bg);transition:background .25s,border-color .25s;}
+    .pub-card p{font-size:.8125rem;color:var(--muted);line-height:1.65;transition:color .25s;}
+    .pub-card p+p{margin-top:.4rem;}
+    .pub-card a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,border-color .2s;}
+    .pub-card a:hover{color:var(--text);border-color:var(--muted);}
+
+    .research-block{margin-top:2rem;}
+    .block-title{font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.6rem;letter-spacing:-.01em;transition:color .25s;}
+    .block-body{font-size:.875rem;color:var(--muted);line-height:1.75;transition:color .25s;}
+    .block-body p+p{margin-top:.6rem;}
+
+    figure.media{margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg);transition:border-color .25s,background .25s;}
+    figure.media img{display:block;width:100%;height:auto;padding:0.5rem;box-sizing:border-box;}
+    figure.media video{display:block;width:100%;height:auto;}
+    figure.media figcaption{font-size:.75rem;color:var(--dim);padding:.55rem .85rem;border-top:1px solid var(--border);text-align:center;line-height:1.6;transition:color .25s,border-color .25s;}
+    .media-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;}
+    .media-row figure.media{flex:1 1 240px;margin-top:0;display:flex;flex-direction:column;}
+    .media-row figure.media img,.media-row figure.media video{width:100%;height:auto;margin-top:auto;}
+    .media-row figure.media figcaption{margin-top:auto;}
+    .media-row figure.media-video{flex:0 0 36%;}
+    .legend-strip{display:flex;gap:.4rem .5rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:.75rem;}
+    .legend-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);letter-spacing:.01em;transition:background .25s,color .25s;}
+    .legend-chip .swatch{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+    figure.media.formula-card{display:flex;flex-direction:column;}
+    .formula-eqs{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.85rem;padding:1.5rem 1.25rem;font-family:'Cambria Math','STIX Two Math',Georgia,'Times New Roman',serif;font-size:.85rem;line-height:1.6;color:var(--text);}
+    .formula-line{white-space:nowrap;overflow-x:auto;}
+    .formula-cont{padding-left:2.3em;}
+    .formula-eqs .idx,.formula-eqs sup{font-size:.7em;}
+
+    .notes{margin-top:1rem;display:flex;flex-direction:column;gap:.7rem;}
+    .note{padding:.65rem .9rem;border-left:2px solid var(--border);transition:border-color .25s;}
+    .note-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem;transition:color .25s;}
+    .note-body{font-size:.8125rem;color:var(--muted);line-height:1.7;transition:color .25s;}
+
+    /* ── Print / PDF ─────────────────────────────────────── */
+    @media print {
+      :root, [data-theme="dark"] {
+        --bg:#fff;--text:#111;--muted:#555;--dim:#999;
+        --border:#ddd;--tag-bg:#f4f4f4;--tag-text:#444;
+      }
+      nav, footer, .lightbox { display:none !important; }
+      body{font-size:11px;}
+      main{max-width:100%;padding:0;margin:0;}
+      a{color:var(--text) !important;text-decoration:none;}
+      .profile-photo{cursor:default;}
+      .profile-photo:hover{transform:none;box-shadow:none;}
+      section{margin-bottom:1.5rem;}
+      .entry, .research-block, .pub-card, figure.media{break-inside:avoid;page-break-inside:avoid;}
+      hr{margin:1.25rem 0;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="favicon-32.png" class="nav-logo" alt="logo">
+    <a href="../" class="nav-name">Ha Seongheon</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-page" id="nav-page"></span>
+  </div>
+  <div class="nav-right">
+    <button class="ctrl" id="btn-pdf" onclick="window.print()">PDF</button>
+    <button class="ctrl" id="btn-lang" onclick="toggleLang()">KO</button>
+    <button class="ctrl ctrl-icon" id="btn-theme" onclick="toggleTheme()" aria-label="toggle theme">
+      <svg id="icon-moon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main"></main>
+
+<footer id="footer"></footer>
+
+<script src="research-data.js"></script>
+<script>
+// ── SVG 아이콘 ─────────────────────────────────────────
+const ICONS = {
+  home: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  email: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
+};
+
+// ── 섹션 레이블 ───────────────────────────────────────
+const SECTION_LABELS = {
+  education:  { ko: "학력",   en: "Education" },
+  research:   { ko: "연구",   en: "Research"  },
+  projects:   { ko: "프로젝트", en: "Projects" },
+  activities: { ko: "활동",   en: "Activities" },
+  awards:     { ko: "수상",   en: "Awards" }
+};
+
+const PAGE_LABEL = { ko: "연구 포트폴리오", en: "Research Portfolio" };
+const STATUS_LABELS = {
+  done:     { ko: "완료", en: "Completed" },
+  progress: { ko: "진행중", en: "Ongoing" }
+};
+
+// ── 언어 상태 ─────────────────────────────────────────
+let lang = 'en';
+
+// ── 텍스트 헬퍼 (string | {ko,en} 모두 처리) ────────
+function t(val) {
+  if (!val) return '';
+  if (typeof val === 'string') return val;
+  return val[lang] || val.en || val.ko || '';
+}
+
+// ── 태그 렌더 ─────────────────────────────────────────
+function renderTags(tags) {
+  if (!tags || tags.length === 0) return '';
+  return `<div class="tags">${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>`;
+}
+
+// ── 미디어(이미지/GIF) 렌더 ────────────────────────────
+const FOCALKLD_FORMULA = `<div class="formula-eqs">
+  <div class="formula-line"><i>D</i><sub class="idx">KL</sub> = &minus;&Sigma;<sub class="idx">i</sub> <i>P</i>(i) log <i>Q</i>(i) + &Sigma;<sub class="idx">i</sub> <i>P</i>(i) log <i>P</i>(i)</div>
+  <div class="formula-line"><i>D</i><sub class="idx">FocalKL</sub> = &minus;&Sigma;<sub class="idx">i</sub> e<sup><i>P</i>(i)</sup>(1&minus;<i>Q</i>(i))<sup>&gamma;</sup> <i>P</i>(i) log <i>Q</i>(i)</div>
+  <div class="formula-line formula-cont">+ &Sigma;<sub class="idx">i</sub> e<sup><i>P</i>(i)</sup>(1&minus;<i>P</i>(i))<sup>&gamma;</sup> <i>P</i>(i) log <i>P</i>(i)</div>
+</div>`;
+
+function renderMedia(m) {
+  if (m.formula) {
+    const videoHtml = m.video ? `<video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${m.rate||1};"></video>` : '';
+    return `<figure class="media formula-card">${videoHtml}${FOCALKLD_FORMULA}${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+  }
+  if (m.video) {
+    const rate = m.rate || 1;
+    return `<figure class="media media-video"><video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${rate};"></video>${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+  }
+  return `<figure class="media"><img src="${m.src}" alt="${t(m.alt)}" loading="lazy">${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+}
+function renderMediaList(list) {
+  if (!list || list.length === 0) return '';
+  if (list.length === 1) return renderMedia(list[0]);
+  return `<div class="media-row">${list.map(renderMedia).join('')}</div>`;
+}
+
+// ── 항목(entry) 렌더 ──────────────────────────────────
+function renderEntry(item) {
+  const title  = t(item.title);
+  const sub    = item.sub  ? `<p class="entry-sub">${t(item.sub)}</p>` : '';
+  const bodyVal = item.body;
+  const body = bodyVal
+    ? Array.isArray(bodyVal)
+      ? `<div class="entry-body"><ul>${bodyVal.map(p => `<li>${t(p)}</li>`).join('')}</ul></div>`
+      : `<div class="entry-body">${t(bodyVal)}</div>`
+    : '';
+  const date   = item.date ? `<span class="entry-date">${item.date}</span>` : '';
+  const status = item.status ? `<span class="status status-${item.status}">${t(STATUS_LABELS[item.status])}</span>` : '';
+  const media  = item.media ? renderMediaList(item.media) : '';
+  return `
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">${title}</span>
+        ${date}
+      </div>
+      <div class="entry-sub-row">
+        ${sub}
+        ${status}
+      </div>
+      ${body}
+      ${media}
+      ${renderTags(item.tags)}
+    </div>`;
+}
+
+// ── 연구 섹션 렌더 ────────────────────────────────────
+function renderResearchBlock(b) {
+  const body = b.body && b.body.length ? `<ul>${b.body.map(p => `<li>${t(p)}</li>`).join('')}</ul>` : '';
+  const media = renderMediaList(b.media);
+  const mediaRow = b.mediaRow ? `<div class="media-row">${b.mediaRow.map(renderMedia).join('')}</div>` : '';
+  const mediaAfterRow = b.mediaAfterRow ? renderMediaList(b.mediaAfterRow) : '';
+  const legend = b.legend ? `<div class="legend-strip">${b.legend.map(l => `<span class="legend-chip"><span class="swatch" style="background:${l.color}"></span>${t({ ko: l.ko, en: l.en })}</span>`).join('')}</div>` : '';
+  const mediaAfterLegend = b.mediaAfterLegend ? renderMediaList(b.mediaAfterLegend) : '';
+  const notes = b.notes ? `<div class="notes">${b.notes.map(n => `
+      <div class="note">
+        <div class="note-label">${t(n.label)}</div>
+        <div class="note-body">${t(n.body)}</div>
+      </div>`).join('')}</div>` : '';
+  return `
+    <div class="research-block">
+      <p class="block-title">${t(b.heading)}</p>
+      <div class="block-body">${body}</div>
+      ${media}
+      ${mediaRow}
+      ${mediaAfterRow}
+      ${legend}
+      ${mediaAfterLegend}
+      ${notes}
+    </div>`;
+}
+
+function renderResearch() {
+  const r = DATA.research;
+  const meta = r.meta.map(m => m.url
+    ? `<p><a href="${m.url}" target="_blank" rel="noopener">${t(m)}</a></p>`
+    : `<p>${t(m)}</p>`
+  ).join('');
+  const topics = renderTags(r.topics.map(tp => t(tp)));
+  const blocks = r.blocks.map(renderResearchBlock).join('');
+  const pubs = (DATA.publications || []).map(p => {
+    const pubMeta = p.meta.map(m => m.url
+      ? `<p><a href="${m.url}" target="_blank" rel="noopener">${t(m)}</a></p>`
+      : `<p>${t(m)}</p>`
+    ).join('');
+    const pubTopics = renderTags(p.topics.map(tp => t(tp)));
+    const pubBlocks = p.blocks.map(renderResearchBlock).join('');
+    return `
+      <hr>
+      <div class="entry-header"><span class="entry-title">${t(p.title)}</span></div>
+      <div class="pub-card">${pubMeta}</div>
+      ${pubTopics}
+      ${pubBlocks}`;
+  }).join('');
+  return `
+    <section>
+      <p class="section-label">${t(SECTION_LABELS.research)}</p>
+      <div class="entry-header"><span class="entry-title">${t(r.paperTitle)}</span></div>
+      <div class="pub-card">${meta}</div>
+      ${topics}
+      ${blocks}
+      ${pubs}
+    </section>`;
+}
+
+// ── 섹션 렌더 ─────────────────────────────────────────
+function renderSection(key) {
+  if (key === 'research') return renderResearch();
+  const label = t(SECTION_LABELS[key]);
+  const inner = (DATA[key] || []).map(renderEntry).join('');
+  return `<section><p class="section-label">${label}</p>${inner}</section>`;
+}
+
+// ── 링크 렌더 ─────────────────────────────────────────
+function renderLinks() {
+  return DATA.links.map(l =>
+    `<a href="${l.url}" ${l.url.startsWith('mailto') ? '' : (l.url.startsWith('http') ? 'target="_blank" rel="noopener"' : '')}>
+      ${ICONS[l.icon] || ''}${l.label}
+    </a>`
+  ).join('');
+}
+
+// ── 전체 페이지 렌더 ──────────────────────────────────
+function render() {
+  const p = DATA.profile;
+
+  document.title = `${t(p.name)} — ${t(PAGE_LABEL)}`;
+  document.getElementById('nav-page').textContent = t(PAGE_LABEL);
+
+  const photo = p.photo
+    ? `<a href="../"><img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" /></a>`
+    : '';
+
+  const sections = DATA.sections
+    .map((key, i) => renderSection(key) + (i < DATA.sections.length - 1 ? '<hr>' : ''))
+    .join('');
+
+  document.getElementById('main').innerHTML = `
+    <header class="site-header">
+      ${photo}
+      <h1>${t(p.name)}</h1>
+      <p class="sub">${t(p.role)}</p>
+      <p class="page-meta">${p.period} · ${t(PAGE_LABEL)}</p>
+      <p class="bio">${t(p.bio)}</p>
+      <div class="links">${renderLinks()}</div>
+    </header>
+    ${sections}`;
+
+  const name = t(p.name);
+  document.getElementById('footer').innerHTML = `
+    <span>© ${new Date().getFullYear()} ${name}</span>
+    <a href="https://haseongheon.github.io/">${t(p.name)} · CV</a>`;
+}
+
+// ── 언어 토글 ─────────────────────────────────────────
+function toggleLang() {
+  lang = lang === 'en' ? 'ko' : 'en';
+  document.getElementById('btn-lang').textContent = lang === 'en' ? 'KO' : 'EN';
+  document.documentElement.lang = lang;
+  render();
+}
+
+// ── 테마 토글 ─────────────────────────────────────────
+let theme = 'light';
+function toggleTheme() {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme;
+  document.getElementById('icon-moon').style.display = theme === 'dark' ? 'block' : 'none';
+  document.getElementById('icon-sun').style.display  = theme === 'light' ? 'block' : 'none';
+}
+
+// ── 초기 렌더 ─────────────────────────────────────────
+render();
+
+</script>
+</body>
+</html>

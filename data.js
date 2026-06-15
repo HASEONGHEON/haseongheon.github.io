@@ -2,7 +2,7 @@ const DATA = {
 
   // ── 프로필 ──────────────────────────────────────────────
   profile: {
-    photo: "profile.png",          // 사진 파일명. 없애려면 null
+    photo: "assets/profile.png",          // 사진 파일명. 없애려면 null
     name:  { ko: "하성헌", en: "Ha Seongheon" },
     role:  {
       ko: "Platform Engineer · AI Infrastructure",
@@ -18,7 +18,8 @@ const DATA = {
   links: [
     { label: "GitHub",   url: "https://github.com/HASEONGHEON",                                      icon: "github" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/%EC%84%B1%ED%97%8C-%ED%95%98-162794317/", icon: "linkedin" },
-    { label: "Email",    url: "mailto:[123skfro@gmail.com](mailto:123skfro@gmail.com)",               icon: "email" }
+    { label: "Email",    url: "mailto:[123skfro@gmail.com](mailto:123skfro@gmail.com)",               icon: "email" },
+    { label: { ko: "석사과정 연구 경력", en: "M.S. Research Portfolio" }, url: "research/", icon: "research" }
   ],
 
   // ── 섹션 순서 (원하는 순서로 배열, 없애려면 해당 줄 삭제) ─
