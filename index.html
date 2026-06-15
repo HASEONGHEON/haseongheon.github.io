@@ -192,10 +192,7 @@ function render() {
 
   // footer
   const name = t(p.name);
-  const ghLink = DATA.links.find(l => l.icon === 'github');
-  document.getElementById('footer').innerHTML = `
-    <span>© ${new Date().getFullYear()} ${name}</span>
-    ${ghLink ? `<a href="${ghLink.url}" target="_blank" rel="noopener">${ghLink.url.replace('https://', '')}</a>` : ''}`;
+  document.getElementById('footer').innerHTML = `<span>© ${new Date().getFullYear()} ${name}</span>`;
 }
 
 // ── 언어 토글 ─────────────────────────────────────────

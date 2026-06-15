@@ -344,9 +344,7 @@ function render() {
     ${sections}`;
 
   const name = t(p.name);
-  document.getElementById('footer').innerHTML = `
-    <span>© ${new Date().getFullYear()} ${name}</span>
-    <a href="https://haseongheon.github.io/">${t(p.name)} · CV</a>`;
+  document.getElementById('footer').innerHTML = `<span>© ${new Date().getFullYear()} ${name}</span>`;
 }
 
 // ── 언어 토글 ─────────────────────────────────────────
