@@ -9,7 +9,7 @@ const DATA = {
       en: "Platform Engineer · AI Infrastructure"
     },
     bio: {
-      ko: "LG Electronics VS본부 AX실에서 AI 개발 플랫폼과 LLM 인프라를 설계·운영하고 있습니다. EKS 기반 클라우드 클러스터 위에서 에이전트/MCP 자동 배포 플랫폼, 사내 LLM API 게이트웨이, 클라우드 개발 환경 및 운영 자동화 체계를 구축하고 있습니다.",
+      ko: "LG 전자 VS사업본부 AX실에서 AI 개발 플랫폼과 LLM 인프라를 설계·운영하고 있습니다. EKS 기반 클라우드 클러스터 위에서 에이전트/MCP 자동 배포 플랫폼, 사내 LLM API 게이트웨이, 클라우드 개발 환경 및 운영 자동화 체계를 구축하고 있습니다.",
       en: "I design and operate AI development platforms and LLM infrastructure at LG Electronics VS AX Department. On EKS-based cloud clusters, I build agent/MCP auto-deployment platforms, internal LLM API gateways, cloud development environments, and operational automation systems."
     }
   },
@@ -90,7 +90,7 @@ const DATA = {
         en: "Internal CLI Agent Based on opencode"
       },
       body: {
-        ko: "opencode 기반 사내 CLI 에이전트를 구축하여 로컬 및 VPS 환경에서 자율적으로 실행할 수 있도록 구성했습니다. 사내 LLM API와 손쉽게 연동할 수 있으며, CLI 기반 개발·운영 작업을 자동화하고 메신저를 통한 원격 제어를 지원합니다. 또한 확장 가능한 Skills 플러그인 아키텍처를 적용하여 다양한 내부 업무 시나리오에 맞게 기능을 확장할 수 있도록 설계했습니다.",
+        ko: "opencode 기반 사내 CLI 에이전트를 구축하여 로컬 및 클러스터 개발 환경에서 자율적으로 실행할 수 있도록 구성했습니다. 사내 LLM API와 손쉽게 연동할 수 있으며, CLI 기반 개발·운영 작업을 자동화하고 메신저를 통한 원격 제어를 지원합니다. 또한 확장 가능한 Skills 플러그인 아키텍처를 적용하여 다양한 내부 업무 시나리오에 맞게 기능을 확장할 수 있도록 설계했습니다.",
         en: "Built an internal CLI agent based on opencode that can run autonomously on local machines and VPS environments. It integrates easily with the internal LLM API, automates CLI-based development and operations tasks, and supports remote control through messenger-based interfaces. The agent also adopts an extensible Skills plugin architecture, allowing it to be expanded for various internal workflow scenarios."
       },
       tags: ["Python", "Telegram", "Docker", "LLM API", "Skills"]
