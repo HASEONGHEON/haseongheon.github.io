@@ -94,7 +94,7 @@ const DATA = {
         ko: "opencode 기반 사내 CLI 에이전트를 구축하여 로컬 및 클러스터 개발 환경에서 자율적으로 실행할 수 있도록 구성했습니다. 사내 LLM API와 손쉽게 연동할 수 있으며, CLI 기반 개발·운영 작업을 자동화하고 메신저를 통한 원격 제어를 지원합니다. 또한 확장 가능한 Skills 플러그인 아키텍처를 적용하여 다양한 내부 업무 시나리오에 맞게 기능을 확장할 수 있도록 설계했습니다.",
         en: "Built an internal CLI agent based on opencode that can run autonomously on local machines and VPS environments. It integrates easily with the internal LLM API, automates CLI-based development and operations tasks, and supports remote control through messenger-based interfaces. The agent also adopts an extensible Skills plugin architecture, allowing it to be expanded for various internal workflow scenarios."
       },
-      tags: ["opencode", "Teams", "Vertex AI"]
+      tags: ["opencode", "messenger", "Vertex AI"]
     },
     {
       title: { ko: "AI Agent", en: "AI Agent" },
@@ -115,20 +115,15 @@ const DATA = {
   skills: [
     {
       label: "Cloud & Infrastructure",
-      tags: ["AWS EKS", "EC2", "S3", "FSx", "Terraform", "Karpenter", "Grafana", "DataDog", "Prometheus", "kwatch"]
+      tags: ["EKS", "EC2","IaC(Terraform)", "Karpenter", "Grafana", "DataDog", "Prometheus", "kwatch"]
     },
     {
       label: "Container & GitOps",
       tags: ["Kubernetes", "Docker", "Helm", "ArgoCD", "Git CI"]
     },
     {
-      label: "AI / ML Infrastructure",
-      tags: ["LiteLLM", "Inf2 / Neuron", "Claude API", "OpenAI API", "Fine-tuning"]
+      label: "AI Agent",
+      tags: ["Langchain", "Langgraph", "Rag", "MCP"]
     },
-    {
-      label: "DevOps & Automation",
-      tags: ["OIDC / SSO", "ExternalSecret", "Coder", "Python", "Bash"]
-    }
   ]
-
 };
