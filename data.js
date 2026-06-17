@@ -95,6 +95,19 @@ const DATA = {
         en: "Built an internal CLI agent based on opencode that can run autonomously on local machines and VPS environments. It integrates easily with the internal LLM API, automates CLI-based development and operations tasks, and supports remote control through messenger-based interfaces. The agent also adopts an extensible Skills plugin architecture, allowing it to be expanded for various internal workflow scenarios."
       },
       tags: ["opencode", "Teams", "Vertex AI"]
+    },
+    {
+      title: { ko: "AI Agent", en: "AI Agent" },
+      date:  "2025.02 - 2025.12",
+      sub: {
+        ko: "품질, 생산, 제무 도메인의 AI 에이전트 (사업부 KI 과제 참여)",
+        en: "AI Agents for Quality, Manufacturing, and Finance Domains (Participated in LGE KI Project)"
+      },
+      body: {
+        ko: "품질, 생산, 재무 도메인의 AI Agent 개발 프로젝트에 참여했습니다. 데이터 ETL 파이프라인 구축과 인덱스 설계를 주로 담당했으며, Elasticsearch와 Neo4j를 자체 운영하면서 RAG 기반 검색·추론 구조의 설계와 개선을 수행했습니다.",
+        en: "Participated in the development of AI agents for quality, manufacturing, and finance domains. Primarily responsible for building data ETL pipelines and designing indexes, while managing Elasticsearch and Neo4j in-house, and designing and improving RAG-based search and inference structures."
+      },
+      tags: ["langchain", "Langgraph", "Rag", "GraphDB", "Elasticsearch", "Neo4j"]
     }
   ],
 
@@ -102,7 +115,7 @@ const DATA = {
   skills: [
     {
       label: "Cloud & Infrastructure",
-      tags: ["AWS EKS", "EC2", "S3", "FSx", "Terraform", "Karpenter", "Grafana", "DataDog", "Prometheus"]
+      tags: ["AWS EKS", "EC2", "S3", "FSx", "Terraform", "Karpenter", "Grafana", "DataDog", "Prometheus", "kwatch"]
     },
     {
       label: "Container & GitOps",
