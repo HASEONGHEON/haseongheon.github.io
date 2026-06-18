@@ -35,7 +35,7 @@ const DATA = {
         en: "VS Company, AX Department · LLMOps Engineer"
       },
       body: {
-        ko: "AI 개발 플랫폼과 EKS 기반 클라우드 인프라를 설계·운영하고 있습니다. 사내 LLM API 게이트웨이, 에이전트/MCP 자동 배포 플랫폼, 클라우드 개발 환경 자동화 체계를 구축했으며, VS사업본부 AI Agent 구축 실무자 과정의 사내 강사로도 활동하고 있습니다.",
+        ko: "현업 업무 도메인에 대한 이해를 바탕으로 AI Agent 개발과 LLMOps/AIOps 체계 구축을 담당하고 있습니다. 사내 LLM API 게이트웨이, Agent/MCP 자동 배포 플랫폼, EKS 기반 클라우드 개발 환경을 구축·운영하며, AI 서비스의 배포 자동화, 운영 안정성, 사용량 관리, 모니터링 체계를 고도화하고 있습니다. 또한 각 업무 도메인별 AI Agent 개발에 참여하며 현업 요구사항을 Agent 워크플로우로 구현했고, VS사업본부 AI Agent 구축 실무자 과정의 사내 강사로 활동하며 조직 내 AI 활용 및 개발 역량 확산을 지원하고 있습니다.",
         en: "Designing and operating AI development platforms and EKS-based cloud infrastructure. Built an internal LLM API gateway, an agent/MCP auto-deployment platform, and automation systems for cloud development environments. Also serving as an internal instructor for the VS Company's AI Agent hands-on training program."
       },
       tags: []
@@ -47,6 +47,7 @@ const DATA = {
     {
       title: { ko: "AWS Cloud Engineering", en: "AWS Cloud Engineering" },
       date:  "2025.06 - Present",
+      role: { type: "team", detail: { ko: "공동 운영", en: "Co-ownership" } },
       sub: {
         ko: "클라우드 인프라 운영 및 플랫폼 엔지니어링",
         en: "Cloud Infrastructure Operations and Platform Engineering"
@@ -60,6 +61,7 @@ const DATA = {
     {
       title: { ko: "AX-Dev Platform", en: "AX-Dev Platform" },
       date:  "2025.12 - Present",
+      role: { type: "solo" },
       sub: {
         ko: "클라우드 IDE 개발 환경 및 AI Agent / MCP 서버 자동 배포 플랫폼",
         en: "Cloud IDE Development Environment and AI Agent / MCP Server Auto-Deployment Platform"
@@ -73,6 +75,7 @@ const DATA = {
     {
       title: { ko: "LLM API 서비스", en: "LLM API Service" },
       date:  "2026.01 - Present",
+      role: { type: "team", detail: { ko: "신청 페이지 · Langfuse 모니터링 · 거버넌스 · 사용량 조회", en: "Request Page · Langfuse Monitoring · Governance · Usage Dashboard" } },
       sub: {
         ko: "사내 LLM 통합 게이트웨이",
         en: "Internal LLM Unified Gateway"
@@ -86,6 +89,7 @@ const DATA = {
     {
       title: { ko: "CLI Agent", en: "CLI Agent" },
       date:  "2026.05 - Present",
+      role: { type: "solo" },
       sub: {
         ko: "opencode 기반 사내 CLI 에이전트",
         en: "Internal CLI Agent Based on opencode"
@@ -99,6 +103,7 @@ const DATA = {
     {
       title: { ko: "AI Agent", en: "AI Agent" },
       date:  "2025.02 - 2025.12",
+      role: { type: "team", detail: { ko: "ETL 파이프라인 · 인덱스 설계", en: "ETL Pipeline · Index Design" } },
       sub: {
         ko: "품질, 생산, 제무 도메인의 AI 에이전트 (사업부 KI 과제 참여)",
         en: "AI Agents for Quality, Manufacturing, and Finance Domains (Participated in LGE KI Project)"

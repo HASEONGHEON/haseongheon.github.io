@@ -56,6 +56,12 @@
     hr{border:none;border-top:1px solid var(--border);margin:2.75rem 0;transition:border-color .25s;}
     .skill-group{margin-bottom:1rem;}
     .skill-label{font-size:.75rem;font-weight:600;color:var(--dim);margin-bottom:.4rem;transition:color .25s;}
+    .role-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;font-weight:600;letter-spacing:.03em;padding:.18rem .5rem;border-radius:4px;margin-bottom:.55rem;}
+    .role-badge.solo{background:rgba(99,190,123,.10);color:#5aaa6f;}
+    .role-badge.team{background:rgba(120,150,220,.10);color:#7892cc;}
+    .role-detail{font-weight:400;opacity:.8;}
+    [data-theme="light"] .role-badge.solo{background:rgba(60,160,80,.10);color:#3a8f50;}
+    [data-theme="light"] .role-badge.team{background:rgba(80,110,200,.10);color:#5060b0;}
     footer{max-width:640px;margin:0 auto;padding:0 1.5rem 3rem;font-size:.775rem;color:var(--dim);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;transition:color .25s;}
     footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
     footer a:hover{color:var(--muted);}
@@ -114,18 +120,34 @@ function renderTags(tags) {
   return `<div class="tags">${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>`;
 }
 
+// ── 역할 badge 렌더 ───────────────────────────────────
+function renderRoleBadge(role) {
+  if (!role) return '';
+  if (role.type === 'solo') {
+    const label = 'Owner · End-to-End';
+    return `<div class="role-badge solo">${label}</div>`;
+  }
+  if (role.type === 'team') {
+    const detail = role.detail ? `<span class="role-detail"> | ${t(role.detail)}</span>` : '';
+    return `<div class="role-badge team">Team${detail}</div>`;
+  }
+  return '';
+}
+
 // ── 항목(entry) 렌더 ──────────────────────────────────
 function renderEntry(item) {
   const title = t(item.title);
   const sub   = item.sub  ? `<p class="entry-sub">${t(item.sub)}</p>` : '';
   const body  = item.body ? `<div class="entry-body">${t(item.body)}</div>` : '';
   const date  = item.date ? `<span class="entry-date">${item.date}</span>` : '';
+  const role  = renderRoleBadge(item.role);
   return `
     <div class="entry">
       <div class="entry-header">
         <span class="entry-title">${title}</span>
         ${date}
       </div>
+      ${role}
       ${sub}
       ${body}
       ${renderTags(item.tags)}
