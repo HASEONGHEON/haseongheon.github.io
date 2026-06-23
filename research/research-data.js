@@ -209,6 +209,91 @@ const DATA = {
   publications: [
     {
       title: {
+        ko: "지식 증류를 활용한 한국수어 인식 및 LLM 기반 한국수어-한국어 대화 프레임워크 연구",
+        en: "Korean Sign Language Recognition Using Knowledge Distillation and LLM-Based KSL–Korean Dialogue Framework"
+      },
+      meta: [
+        {
+          ko: "하성헌, \"지식 증류를 활용한 한국수어 인식 및 LLM 기반 한국수어-한국어 대화 프레임워크 연구,\" 공학석사 학위논문, 부산대학교 대학원, 2025.",
+          en: "Ha, SeongHeon, \"Korean Sign Language Recognition Using Knowledge Distillation and LLM-Based KSL–Korean Dialogue Framework,\" M.Eng. Thesis, Pusan National University, 2025."
+        }
+      ],
+      topics: [
+        { ko: "연속 수어 인식 (CSLR)", en: "Continuous Sign Language Recognition (CSLR)" },
+        { ko: "이미지·키포인트 이중 네트워크", en: "Image–Keypoint Dual Network" },
+        { ko: "Knowledge Distillation", en: "Knowledge Distillation" },
+        { ko: "LLM Fine-tuning (GPT-3.5)", en: "LLM Fine-tuning (GPT-3.5)" },
+        { ko: "배경 강인성", en: "Background Robustness" }
+      ],
+      blocks: [
+        {
+          heading: { ko: "전체 대화 프레임워크", en: "Overall Dialogue Framework" },
+          body: [
+            { ko: "RGB 영상 입력 → 키포인트 추출 → 연속 수어 인식 → 한국수어 말뭉치 → Fine-tuned GPT로 한국어 번역 및 답변 생성", en: "RGB frames → keypoint extraction → CSLR → KSL glosses → fine-tuned GPT translates & generates Korean response" },
+            { ko: "CoT + Few-shot 프롬프트로 단계별 출력: (1) 한국어 번역 (2) 맥락 답변", en: "CoT + few-shot prompting for two-stage output: (1) Korean translation, (2) contextual response" }
+          ],
+          media: [
+            {
+              src: "assets/research/thesis-framework.png",
+              alt: { ko: "전체 대화 프레임워크", en: "Overall dialogue framework" },
+              caption: { ko: "수어 인식 모델 → 말뭉치 변환 → Fine-tuned GPT → 최종 답변", en: "SLR model → gloss conversion → Fine-tuned GPT → final response" }
+            }
+          ]
+        },
+        {
+          heading: { ko: "이중 네트워크 & 지식 증류", en: "Dual Network & Knowledge Distillation" },
+          body: [
+            { ko: "이미지 네트워크: 상관관계 모듈(프레임 간 신체 궤적) + 식별 모듈(전경 강조)로 시공간 정보 추출", en: "Image network: Correlation module (inter-frame body trajectory) + Discrimination module (foreground emphasis) for spatio-temporal features" },
+            { ko: "키포인트 네트워크: 123개 키포인트(손 42 + 몸통·얼굴 81) → ResNeXt → 1D CNN → BiLSTM 분류기", en: "Keypoint network: 123 keypoints (hands 42 + body/face 81) → ResNeXt → 1D CNN → BiLSTM classifier" },
+            { ko: "학습 시 두 네트워크 융합 후 KL Divergence로 키포인트 네트워크에 지식 전달 → 추론 시 키포인트만 사용", en: "Training: fuse both networks, transfer knowledge via KL divergence → inference with keypoint network only (background-robust)" }
+          ],
+          media: [
+            {
+              src: "assets/research/thesis-network.png",
+              alt: { ko: "수어 인식 네트워크 전체 구조", en: "Full SLR network architecture" },
+              caption: { ko: "이미지·키포인트 이중 네트워크와 Knowledge Distillation 구조", en: "Image–keypoint dual network and Knowledge Distillation pipeline" }
+            }
+          ]
+        },
+        {
+          heading: { ko: "키포인트 처리 & LLM", en: "Keypoint Processing & LLM" },
+          body: [
+            { ko: "RTMPose로 추출한 키포인트 → min-max 정규화 → 인종·성별·카메라 거리 무관한 일반화", en: "RTMPose keypoints → min-max normalization → invariant to race, gender, camera distance" },
+            { ko: "GPT-3.5-turbo-1106 파인튜닝 (91,320 토큰) — CoT·Few-shot으로 수어 말뭉치를 자연어 대화로 변환", en: "GPT-3.5-turbo-1106 fine-tuned (91,320 tokens) — CoT & few-shot prompting converts KSL glosses to natural-language dialogue" }
+          ],
+          mediaRow: [
+            {
+              src: "assets/research/thesis-keypoint.png",
+              alt: { ko: "키포인트 시각화", en: "Keypoint visualization" },
+              caption: { ko: "원본 이미지 · 추출 키포인트 · 오른손 · 왼손", en: "Original image · extracted keypoints · right hand · left hand" }
+            },
+            {
+              src: "assets/research/thesis-llm.png",
+              alt: { ko: "LLM 개념도", en: "LLM pipeline diagram" },
+              caption: { ko: "Fine-tuned GPT-3.5: CoT + Few-shot → 한국어 번역 & 답변", en: "Fine-tuned GPT-3.5: CoT + few-shot → Korean translation & response" }
+            }
+          ]
+        },
+        {
+          heading: { ko: "실험 결과", en: "Experimental Results" },
+          body: [
+            { ko: "PHOENIX-14 WER 18.9% — 비교 모델 대비 최고 성능 (CorrNet 19.4%, DNF 22.9%)", en: "PHOENIX-14 WER 18.9% — best among compared models (CorrNet 19.4%, DNF 22.9%)" },
+            { ko: "CSL-Daily WER 26.9% — 전체 1위 (RGB+keypoint), keypoint 단독도 경쟁력 있는 성능", en: "CSL-Daily WER 26.9% — top-1 overall (RGB+keypoint); keypoint-only also competitive" },
+            { ko: "AI-Hub 한국수어 WER 1.09% — 공식 기준 모델(8.88%) 대비 8× 향상", en: "AI-Hub Korean SL WER 1.09% — 8× improvement over official baseline (8.88%)" },
+            { ko: "배경 강인성: 병원·도서관·정원 배경 교체 실험에서 CorrNet 대비 월등한 성능 유지 (~25% vs 25–58%)", en: "Background robustness: keypoint-only holds ~25% WER across hospital/library/garden backgrounds vs. CorrNet (25–58%)" }
+          ],
+          media: [
+            {
+              src: "assets/research/thesis-bg-replace.png",
+              alt: { ko: "배경 변경 실험", en: "Background replacement experiment" },
+              caption: { ko: "배경 교체 실험 — 다양한 실제 환경에서 키포인트 기반 추론의 강인성 검증", en: "Background replacement experiment — validating keypoint-only inference robustness across diverse real-world environments" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: {
         ko: "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks",
         en: "Silent Speech Recognition Framework: Knowledge Distillation of Lip Reading Using Image and Keypoint Networks"
       },
