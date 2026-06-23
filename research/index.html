@@ -27,7 +27,8 @@
       --border:#1f1f1f;--tag-bg:#1a1a1a;--tag-text:#888;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;}
+    html{overflow-x:hidden;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;}
     nav{position:fixed;top:0;left:0;right:0;height:48px;display:flex;align-items:center;padding:0 1.5rem;background:var(--bg);border-bottom:1px solid var(--border);z-index:50;transition:background .25s,border-color .25s;}
     .nav-left{display:flex;align-items:center;gap:.5rem;min-width:0;}
     .nav-logo{width:22px;height:22px;border-radius:5px;display:block;flex-shrink:0;}
@@ -98,6 +99,7 @@
     .media-row figure.media video{width:100%;height:auto;}
     .media-row figure.media figcaption{margin-top:auto;}
     .media-row figure.media-video{flex:0 0 36%;}
+    .media-row figure.media-video video{aspect-ratio:16/9;}
     .legend-strip{display:flex;gap:.4rem .5rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:.75rem;}
     .legend-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);letter-spacing:.01em;transition:background .25s,color .25s;}
     .legend-chip .swatch{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
