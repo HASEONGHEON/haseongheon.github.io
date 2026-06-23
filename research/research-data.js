@@ -222,8 +222,8 @@ const DATA = {
         { ko: "연속 수어 인식 (CSLR)", en: "Continuous Sign Language Recognition (CSLR)" },
         { ko: "이미지·키포인트 이중 네트워크", en: "Image–Keypoint Dual Network" },
         { ko: "Knowledge Distillation", en: "Knowledge Distillation" },
-        { ko: "LLM Fine-tuning (GPT-3.5)", en: "LLM Fine-tuning (GPT-3.5)" },
-        { ko: "배경 강인성", en: "Background Robustness" }
+        { ko: "LLM Fine-tuning", en: "LLM Fine-tuning" },
+        { ko: "Background Robustness", en: "Background Robustness" }
       ],
       blocks: [
         {
