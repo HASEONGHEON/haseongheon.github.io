@@ -66,6 +66,31 @@
     footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
     footer a:hover{color:var(--muted);}
     .nav-logo{width:22px;height:22px;border-radius:5px;display:block;flex-shrink:0;margin-right:.5rem;}
+
+    /* ── Print / PDF ─────────────────────────────────────── */
+    @media print {
+      @page { margin: 1.8cm 2cm; size: A4; }
+      :root, [data-theme="dark"] {
+        --bg:#fff; --text:#111; --muted:#444; --dim:#888;
+        --border:#ddd; --tag-bg:#f5f5f5; --tag-text:#555;
+      }
+      html { color-scheme: light; }
+      nav, footer { display:none !important; }
+      body { font-size:10pt; line-height:1.6; background:#fff; color:#111; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      main { max-width:100%; padding:0; margin:0; }
+      a { color:var(--text) !important; text-decoration:none; }
+      .profile-photo { cursor:default; border:1px solid #ccc; }
+      .profile-photo:hover { opacity:1; }
+      section { margin-bottom:1.25rem; break-inside:avoid; }
+      .entry { break-inside:avoid; page-break-inside:avoid; margin-bottom:1rem; }
+      hr { margin:1rem 0; border-color:#ddd; }
+      .tag { border:1px solid #ccc; background:#f5f5f5 !important; color:#555 !important; }
+      .role-badge { border:1px solid #ccc; background:#f5f5f5 !important; }
+      .role-badge.solo, .role-badge.team { color:#555 !important; }
+      .ctrl, #btn-pdf, #btn-lang, #btn-theme { display:none !important; }
+      .print-url { display:block !important; text-align:center; font-size:8pt; color:#888; padding-top:1rem; border-top:1px solid #ddd; margin-top:2rem; }
+    }
+    .print-url { display:none; }
   </style>
 </head>
 <body>
@@ -86,6 +111,7 @@
 <main id="main"></main>
 
 <footer id="footer"></footer>
+<div class="print-url">haseongheon.github.io</div>
 
 <script src="data.js"></script>
 <script>

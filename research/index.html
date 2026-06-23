@@ -118,22 +118,31 @@
 
     /* ── Print / PDF ─────────────────────────────────────── */
     @media print {
+      @page { margin: 1.8cm 2cm; size: A4; }
       :root, [data-theme="dark"] {
-        --bg:#fff;--text:#111;--muted:#555;--dim:#999;
-        --border:#ddd;--tag-bg:#f4f4f4;--tag-text:#444;
+        --bg:#fff; --text:#111; --muted:#444; --dim:#888;
+        --border:#ddd; --tag-bg:#f5f5f5; --tag-text:#555;
       }
-      nav, footer, .lightbox { display:none !important; }
-      body{font-size:11px;}
-      main{max-width:100%;padding:0;margin:0;}
-      a{color:var(--text) !important;text-decoration:none;}
-      .profile-photo{cursor:default;}
-      .profile-photo:hover{transform:none;box-shadow:none;}
-      section{margin-bottom:1.5rem;}
-      .entry, .research-block, .pub-card, figure.media{break-inside:avoid;page-break-inside:avoid;}
-      hr{margin:1.25rem 0;}
-      figure.media video{display:none !important;}
-      .video-thumbnail{display:block !important;}
+      html { color-scheme: light; }
+      nav, footer { display:none !important; }
+      body { font-size:10pt; line-height:1.6; background:#fff; color:#111; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      main { max-width:100%; padding:0; margin:0; }
+      a { color:var(--text) !important; text-decoration:none; }
+      .profile-photo { cursor:default; border:1px solid #ccc; }
+      .profile-photo:hover { opacity:1; transform:none; }
+      section { margin-bottom:1.5rem; }
+      .entry, .research-block, .pub-card { break-inside:avoid; page-break-inside:avoid; }
+      figure.media { break-inside:avoid; page-break-inside:avoid; max-width:100%; }
+      hr { margin:1.25rem 0; border-color:#ddd; }
+      .tag { border:1px solid #ccc; background:#f5f5f5 !important; color:#555 !important; }
+      .ctrl, #btn-pdf, #btn-lang, #btn-theme { display:none !important; }
+      figure.media video { display:none !important; }
+      .video-thumbnail { display:block !important; width:100%; height:auto; }
+      .media-row { flex-wrap:wrap; }
+      .media-row figure.media-video { flex:0 0 100%; }
+      .print-url { display:block !important; text-align:center; font-size:8pt; color:#888; padding-top:1rem; border-top:1px solid #ddd; margin-top:2rem; }
     }
+    .print-url { display:none; }
     .video-thumbnail{display:none;width:100%;height:auto;}
   </style>
 </head>
@@ -159,6 +168,7 @@
 <main id="main"></main>
 
 <footer id="footer"></footer>
+<div class="print-url">haseongheon.github.io/research</div>
 
 <script src="research-data.js"></script>
 <script>
