@@ -81,8 +81,8 @@ const DATA = {
         en: "Internal LLM Unified Gateway"
       },
       body: {
-        ko: "LiteLLM 프록시를 기반으로 Azure, Bedrock 및 자체 추론 모델 등 다양한 LLM 엔드포인트를 표준 OpenAI API 포맷으로 통합 제공하는 사내 LLM 게이트웨이를 구축했습니다. 품의, 모델 권한 할당으로 이어지는 사용 신청 및 승인 워크플로우를 자동화했으며, 토큰 사용량 기반 과금 및 사용량 추적 체계 및 langfuse 기반 모니터링 시스템을 함께 구현했습니다.",
-        en: "Built an internal LLM gateway using LiteLLM proxy to provide multiple LLM endpoints, including Claude, GPT, Qwen, and internal inference models, through a standard OpenAI-compatible API format. Automated the request and approval workflow from internal approval to Jira ticket creation and model permission assignment, and implemented token-based billing and usage tracking."
+        ko: "LiteLLM 프록시를 기반으로 Azure, Bedrock 및 자체 추론 모델 등 다양한 LLM 엔드포인트를 표준 OpenAI API 포맷으로 통합 제공하는 사내 LLM 게이트웨이를 구축했습니다. 품의부터 모델 권한 할당까지 이어지는 사용 신청·승인 워크플로우를 자동화했으며, 토큰 사용량 기반 과금·추적 체계와 Langfuse 기반 모니터링 시스템도 함께 구현했습니다.",
+        en: "Built an internal LLM gateway using LiteLLM proxy to unify diverse LLM endpoints — Azure, Bedrock, and internal inference models — under a standard OpenAI-compatible API. Automated the request-and-approval workflow from internal sign-off to model permission assignment, and implemented token-based billing, usage tracking, and a Langfuse-based monitoring system."
       },
       tags: ["LiteLLM", "Langfuse", "Azure", "Bedrock"]
     },
