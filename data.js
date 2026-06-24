@@ -112,7 +112,7 @@ const DATA = {
         ko: "품질, 생산, 재무 도메인의 AI Agent 개발 프로젝트에 참여했습니다. 데이터 ETL 파이프라인 구축과 인덱스 설계를 주로 담당했으며, Elasticsearch와 Neo4j를 자체 운영하면서 RAG 기반 검색·추론 구조의 설계와 개선을 수행했습니다.",
         en: "Participated in the development of AI agents for quality, manufacturing, and finance domains. Primarily responsible for building data ETL pipelines and designing indexes, while managing Elasticsearch and Neo4j in-house, and designing and improving RAG-based search and inference structures."
       },
-      tags: ["langchain", "Langgraph", "Rag", "GraphDB", "Elasticsearch", "Neo4j"]
+      tags: ["langchain", "Langgraph", "Rag", "Airflow","GraphDB", "Elasticsearch", "Neo4j"]
     }
   ],
 
