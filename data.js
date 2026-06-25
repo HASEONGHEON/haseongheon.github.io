@@ -53,8 +53,8 @@ const DATA = {
         en: "Cloud Infrastructure Operations and Platform Engineering"
       },
       body: {
-        ko: "AI 개발 플랫폼과 LLM 서비스가 올라가는 EKS 클러스터를 함께 운영하고 있습니다. Kubernetes 워크로드, 모니터링과 로그, 리소스 관리, Helm 기반 배포 방식을 정리하며 서비스가 안정적으로 올라가고 문제 상황을 추적할 수 있는 운영 기반을 다루고 있습니다. 개발자가 매번 인프라 세부 설정을 의식하지 않아도 되는 환경을 만드는 데 중점을 두었습니다.",
-        en: "I help operate the EKS clusters that host our AI development platforms and LLM services. The work covers Kubernetes workloads, monitoring and logs, resource management, and Helm-based deployment patterns, with an emphasis on stable service operation and traceable incidents. I focused on making the infrastructure less something developers have to think about for every deployment."
+        ko: "AI 개발 플랫폼과 LLM 서비스가 실제 배포로 이어질 수 있도록 EKS 기반 클러스터를 함께 운영하고 있습니다. Kubernetes 워크로드, 모니터링과 로그, 리소스 관리, Helm 기반 배포 방식을 정리하며 개발된 AI 서비스가 안정적으로 올라가고 문제 상황을 추적할 수 있는 운영 기반을 다루고 있습니다. 단순한 클러스터 관리보다, AI 서비스가 개발 환경을 넘어 운영 환경에서 계속 실행될 수 있게 만드는 데 중점을 두었습니다.",
+        en: "I help operate EKS-based clusters so AI development platforms and LLM services can move into real deployment. The work covers Kubernetes workloads, monitoring and logs, resource management, and Helm-based deployment patterns, creating an operational foundation where AI services can be deployed reliably and incidents can be traced. Rather than treating this as simple cluster management, I focus on helping AI services keep running beyond the development environment."
       },
       tags: ["EKS", "Kubernetes", "Prometheus", "Grafana", "Helm", "ArgoCD", "GitLab CI", "Terraform", "Karpenter"]
     },
