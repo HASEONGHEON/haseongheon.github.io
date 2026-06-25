@@ -9,8 +9,8 @@ const DATA = {
       en: "Platform Engineer · AI Infrastructure"
     },
     bio: {
-      ko: "LG 전자 VS사업본부 AX실에서 AI 개발 플랫폼과 LLM 인프라를 설계·운영하고 있습니다. EKS 기반 클라우드 클러스터 위에서 에이전트/MCP 자동 배포 플랫폼, 사내 LLM API 게이트웨이, 클라우드 개발 환경 및 운영 자동화 체계를 구축하고 있습니다.",
-      en: "I design and operate AI development platforms and LLM infrastructure at LG Electronics VS AX Department. On EKS-based cloud clusters, I build agent/MCP auto-deployment platforms, internal LLM API gateways, cloud development environments, and operational automation systems."
+      ko: "AI는 모델 자체보다, 사람들이 매일 쓰는 흐름 안에 자연스럽게 들어갈 때 힘이 생긴다고 생각합니다. 업무용 Agent에는 각 도메인 전문가의 지식도 꼭 필요하다고 보고 있습니다. 그래서 에이전트와 MCP 서버를 쉽게 만들고 배포하는 환경, 여러 LLM을 같은 방식으로 쓰는 게이트웨이, 그리고 한 번 만든 뒤에도 계속 굴러가는 운영 자동화를 만들고 있습니다.",
+      en: "I believe AI becomes useful when it fits naturally into the way people already work, not when the model itself is treated as the product. For business agents, I also think domain expert knowledge is essential. I build environments for developing and deploying agents and MCP servers, gateways for using different LLMs consistently, and automation that keeps running after the first demo is over."
     }
   },
 
@@ -35,8 +35,8 @@ const DATA = {
         en: "VS Company, AX Department · LLMOps Engineer"
       },
       body: {
-        ko: "현업 업무 도메인에 대한 이해를 바탕으로 AI Agent 개발과 LLMOps/AIOps 체계 구축을 담당하고 있습니다. 사내 LLM API 게이트웨이, Agent/MCP 자동 배포 플랫폼, EKS 기반 클라우드 개발 환경을 구축·운영하며, AI 서비스의 배포 자동화, 운영 안정성, 사용량 관리, 모니터링 체계를 고도화하고 있습니다. 또한 각 업무 도메인별 AI Agent 개발에 참여하며 현업 요구사항을 Agent 워크플로우로 구현했고, VS사업본부 AI Agent 구축 실무자 과정의 사내 강사로 활동하며 조직 내 AI 활용 및 개발 역량 확산을 지원하고 있습니다.",
-        en: "Designing and operating AI development platforms and EKS-based cloud infrastructure. Built an internal LLM API gateway, an agent/MCP auto-deployment platform, and automation systems for cloud development environments. Also serving as an internal instructor for the VS Company's AI Agent hands-on training program."
+        ko: "요즘은 AI Agent와 LLM이 데모에서 끝나지 않고 실제 업무 안에서 반복해서 쓰이려면 무엇이 필요할지 고민하고 있습니다. 사내 LLM API 게이트웨이, Agent/MCP 개발·배포 플랫폼, EKS 기반 개발 환경을 다루며 배포, 권한, 사용량, 모니터링처럼 잘 보이지 않지만 없으면 금방 무너지는 부분들을 정리하고 있습니다. 직접 만든 환경을 사내 실습 교육에서도 사용하며, 플랫폼이 사람들의 작업 방식과 맞아가는 과정을 보고 있습니다.",
+        en: "These days I spend a lot of time thinking about what AI agents and LLMs need in order to be used repeatedly in real work, not just shown once as a demo. I work on an internal LLM API gateway, an Agent/MCP development and deployment platform, and EKS-based development environments, especially the less visible parts such as deployment, permissions, usage tracking, and monitoring. I also use these environments in internal hands-on training, which helps me see how a platform actually meets people's workflows."
       },
       tags: []
     }
@@ -53,10 +53,10 @@ const DATA = {
         en: "Cloud Infrastructure Operations and Platform Engineering"
       },
       body: {
-        ko: "EKS 기반 클라우드 클러스터의 배포와 안정적인 운영을 위한 인프라 업무를 담당하고 있습니다. Kubernetes 워크로드 운영, 모니터링 및 로그 파이프라인 구성, 클러스터 리소스 관리, 배포 환경 표준화 등을 통해 AI 개발 플랫폼과 LLM 서비스가 안정적으로 실행될 수 있는 기반을 구축하고 있습니다.",
-        en: "Responsible for operating EKS-based cloud clusters with a focus on reliability and scalability. Managing Kubernetes workloads, monitoring and logging pipelines, cluster resources, and standardized deployment environments to provide a stable foundation for AI development platforms and LLM services."
+        ko: "AI 개발 플랫폼과 LLM 서비스가 올라가는 EKS 클러스터를 함께 운영하고 있습니다. Kubernetes 워크로드, 모니터링과 로그, 리소스 관리, Helm 기반 배포 방식을 정리하며 서비스가 안정적으로 올라가고 문제 상황을 추적할 수 있는 운영 기반을 다루고 있습니다. 개발자가 매번 인프라 세부 설정을 의식하지 않아도 되는 환경을 만드는 데 중점을 두었습니다.",
+        en: "I help operate the EKS clusters that host our AI development platforms and LLM services. The work covers Kubernetes workloads, monitoring and logs, resource management, and Helm-based deployment patterns, with an emphasis on stable service operation and traceable incidents. I focused on making the infrastructure less something developers have to think about for every deployment."
       },
-      tags: ["EKS", "Kubernetes", "Prometheus", "Grafana", "Helm", "ArogoCD", "GitLab CI", "Terraform", "Karpenter"]
+      tags: ["EKS", "Kubernetes", "Prometheus", "Grafana", "Helm", "ArgoCD", "GitLab CI", "Terraform", "Karpenter"]
     },
     {
       title: { ko: "AX-Dev Platform", en: "AX-Dev Platform" },
@@ -67,8 +67,8 @@ const DATA = {
         en: "Cloud IDE Development Environment and AI Agent / MCP Server Auto-Deployment Platform"
       },
       body: {
-        ko: "클라우드 클러스터 기반 개발·배포 플랫폼에서 사용자가 에이전트와 MCP의 비즈니스 로직 개발에만 집중할 수 있도록, 개발 환경을 템플릿 베이스로 제공하고 이를 배포 환경에서 스냅샷 기반 자동 배포하는 파이프라인을 구축했습니다. Kubernetes DNS 기반 동적 라우팅을 적용하여 배포된 에이전트와 MCP 서비스를 사용자별·환경별로 연결했으며, 다수 사용자가 클러스터 내에서 개발·배포·실행 환경을 공유할 수 있는 플랫폼을 구현했습니다.",
-        en: "Built a cloud cluster-based development and deployment platform that allows users to focus only on implementing business logic for agents and MCP servers. The platform provides development environments as template-based setups and automatically deploys them as snapshots in the deployment environment. Implemented Kubernetes DNS-based dynamic routing to connect deployed agents and MCP services by user and environment, enabling a multi-agent operating model where multiple users can share development, deployment, and runtime environments within the cluster."
+        ko: "Agent나 MCP 서버 개발자가 인프라 준비보다 로직 구현에 집중할 수 있도록 만든 클라우드 기반 개발·배포 플랫폼입니다. Coder 기반 개발 환경을 템플릿으로 제공하고, 작성한 코드를 스냅샷 형태로 배포 환경에 옮겨 실행하도록 구성했습니다. Kubernetes DNS와 사용자별 실행 환경을 이용해 개발·배포·런타임 사이의 연결 흐름을 단순화했습니다.",
+        en: "This is a cloud-based development and deployment platform for agent and MCP server developers to focus more on business logic than infrastructure setup. It provides Coder-based development environments as templates and moves written code into the runtime environment as snapshots. Kubernetes DNS and user-scoped execution environments simplify the connection between development, deployment, and runtime."
       },
       tags: ["Kubernetes", "Coder", "ECR", "Docker", "EKS", "Route53"]
     },
@@ -81,8 +81,8 @@ const DATA = {
         en: "Internal LLM Unified Gateway"
       },
       body: {
-        ko: "LiteLLM 프록시를 기반으로 Azure, Bedrock 및 자체 추론 모델 등 다양한 LLM 엔드포인트를 표준 OpenAI API 포맷으로 통합 제공하는 사내 LLM 게이트웨이를 구축했습니다. 품의부터 모델 권한 할당까지 이어지는 사용 신청·승인 워크플로우를 자동화했으며, 토큰 사용량 기반 과금·추적 체계와 Langfuse 기반 모니터링 시스템도 함께 구현했습니다.",
-        en: "Built an internal LLM gateway using LiteLLM proxy to unify diverse LLM endpoints — Azure, Bedrock, and internal inference models — under a standard OpenAI-compatible API. Automated the request-and-approval workflow from internal sign-off to model permission assignment, and implemented token-based billing, usage tracking, and a Langfuse-based monitoring system."
+        ko: "LiteLLM 기반 게이트웨이에서 Azure, Bedrock, 자체 추론 모델을 OpenAI 호환 인터페이스로 통합하는 작업에 참여했습니다. 신청, 권한, 모니터링, 토큰 사용량 조회 흐름을 함께 정리해 여러 모델을 하나의 운영 체계 안에서 사용할 수 있도록 구성했습니다. 모델 호출 자체뿐 아니라 누가 어떤 모델을 어떻게 사용하는지 확인할 수 있는 관리 기능을 다뤘습니다.",
+        en: "I worked on a LiteLLM-based gateway that brings Azure, Bedrock, and internal inference models behind an OpenAI-compatible interface. I also helped organize request, permission, monitoring, and token usage flows so multiple models could be used within one operating structure. Beyond model calls themselves, I worked on management features that show who is using which model and how."
       },
       tags: ["LiteLLM", "Langfuse", "Azure", "Bedrock"]
     },
@@ -95,24 +95,24 @@ const DATA = {
         en: "Internal CLI Agent Based on opencode"
       },
       body: {
-        ko: "opencode 기반 사내 CLI 에이전트를 구축하여 로컬 및 클러스터 개발 환경에서 자율적으로 실행할 수 있도록 구성했습니다. 사내 LLM API와 손쉽게 연동할 수 있으며, CLI 기반 개발·운영 작업을 자동화하고 메신저를 통한 원격 제어를 지원합니다. 또한 확장 가능한 Skills 플러그인 아키텍처를 적용하여 다양한 내부 업무 시나리오에 맞게 기능을 확장할 수 있도록 설계했습니다.",
-        en: "Built an internal CLI agent based on opencode that can run autonomously on local machines and VPS environments. It integrates easily with the internal LLM API, automates CLI-based development and operations tasks, and supports remote control through messenger-based interfaces. The agent also adopts an extensible Skills plugin architecture, allowing it to be expanded for various internal workflow scenarios."
+        ko: "opencode를 기반으로, 로컬과 클러스터 개발 환경에서 바로 실행할 수 있는 사내 CLI 에이전트를 만들고 있습니다. 터미널 안에서 코드베이스를 읽고, 파일 수정·명령 실행·검증까지 이어지는 개발 흐름을 에이전트가 직접 다룰 수 있도록 사내 LLM API와 연동했습니다. 반복적인 개발·운영 작업을 대화형으로 처리하고, 필요한 경우 메신저를 통해 원격으로 작업을 요청하는 방식도 함께 실험하고 있습니다.",
+        en: "I am building an internal CLI agent based on opencode that can run directly in local and cluster development environments. It connects to the internal LLM API so the agent can work inside the terminal, read the codebase, edit files, run commands, and verify changes as part of the development flow. I use it to handle repetitive development and operations tasks conversationally, and I am also experimenting with messenger-based remote requests when needed."
       },
       tags: ["opencode", "messenger", "Vertex AI"]
     },
     {
       title: { ko: "AI Agent", en: "AI Agent" },
-      date:  "2025.02 - 2025.12",
-      role: { type: "team", detail: { ko: "ETL 파이프라인 · 인덱스 설계", en: "ETL Pipeline · Index Design" } },
+      date:  "2025.02 - Present",
+      role: { type: "team", detail: { ko: "현업 협업 · ETL 파이프라인 · 인덱스 설계", en: "Business Collaboration · ETL Pipeline · Index Design" } },
       sub: {
-        ko: "품질, 생산, 제무 도메인의 AI 에이전트 (사업부 KI 과제 참여)",
-        en: "AI Agents for Quality, Manufacturing, and Finance Domains (Participated in LGE KI Project)"
+        ko: "품질·재무 등 현업 도메인과 함께 만든 AI 에이전트",
+        en: "AI Agents Built with Quality, Finance, and Other Business Domains"
       },
       body: {
-        ko: "품질, 생산, 재무 도메인의 AI Agent 개발 프로젝트에 참여했습니다. 데이터 ETL 파이프라인 구축과 인덱스 설계를 주로 담당했으며, Elasticsearch와 Neo4j를 자체 운영하면서 RAG 기반 검색·추론 구조의 설계와 개선을 수행했습니다.",
-        en: "Participated in the development of AI agents for quality, manufacturing, and finance domains. Primarily responsible for building data ETL pipelines and designing indexes, while managing Elasticsearch and Neo4j in-house, and designing and improving RAG-based search and inference structures."
+        ko: "품질과 재무 도메인을 중심으로, 현업과 함께 AI Agent를 만드는 과제에 참여했습니다. 문서, 기록, 설명처럼 비정형에 가까운 현업 데이터를 Agent가 활용할 수 있도록 Airflow DAG 기반 ETL 흐름을 구성하고, Elasticsearch와 Neo4j를 운영하며 검색 인덱스와 그래프 구조를 정리했습니다. 도메인마다 데이터의 의미와 질문 방식이 달라서, 현업 전문가의 지식이 Agent 설계 과정에 함께 들어가는 것이 중요했습니다.",
+        en: "I participated in AI agent projects built together with business teams, mainly around quality and finance domains. To make business data such as documents, records, and explanations usable by agents, I built ETL flows with Airflow DAGs, operated Elasticsearch and Neo4j, and shaped search indexes and graph structures. Since the meaning of data and the way questions are asked differ by domain, domain expert knowledge was an important part of the agent design process."
       },
-      tags: ["langchain", "Langgraph", "Rag", "Airflow","GraphDB", "Elasticsearch", "Neo4j"]
+      tags: ["LangChain", "LangGraph", "RAG", "Airflow", "GraphDB", "Elasticsearch", "Neo4j"]
     }
   ],
 
@@ -120,15 +120,15 @@ const DATA = {
   skills: [
     {
       label: "Cloud & Infrastructure",
-      tags: ["EKS", "EC2","IaC(Terraform)", "Karpenter", "Grafana", "DataDog", "Prometheus", "kwatch"]
+      tags: ["EKS", "EC2", "IaC(Terraform)", "Karpenter", "Grafana", "Datadog", "Prometheus", "kwatch"]
     },
     {
       label: "Container & GitOps",
-      tags: ["Kubernetes", "Docker", "Helm", "ArgoCD", "Git CI"]
+      tags: ["Kubernetes", "Docker", "Helm", "ArgoCD", "GitLab CI"]
     },
     {
       label: "AI Agent",
-      tags: ["Langchain", "Langgraph", "Rag", "MCP"]
+      tags: ["LangChain", "LangGraph", "RAG", "MCP"]
     },
   ]
 };
