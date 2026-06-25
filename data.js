@@ -35,8 +35,8 @@ const DATA = {
         en: "VS Company, AX Department · LLMOps Engineer"
       },
       body: {
-        ko: "요즘은 AI Agent와 LLM이 데모에서 끝나지 않고 실제 업무 안에서 반복해서 쓰이려면 무엇이 필요할지 고민하고 있습니다. 사내 LLM API 게이트웨이, Agent/MCP 개발·배포 플랫폼, EKS 기반 개발 환경을 다루며 배포, 권한, 사용량, 모니터링처럼 잘 보이지 않지만 없으면 금방 무너지는 부분들을 정리하고 있습니다. 직접 만든 환경을 사내 실습 교육에서도 사용하며, 플랫폼이 사람들의 작업 방식과 맞아가는 과정을 보고 있습니다.",
-        en: "These days I spend a lot of time thinking about what AI agents and LLMs need in order to be used repeatedly in real work, not just shown once as a demo. I work on an internal LLM API gateway, an Agent/MCP development and deployment platform, and EKS-based development environments, especially the less visible parts such as deployment, permissions, usage tracking, and monitoring. I also use these environments in internal hands-on training, which helps me see how a platform actually meets people's workflows."
+        ko: "차량 전장 사업 도메인의 업무 특성을 반영한 AI Agent 개발과 LLMOps/AIOps 체계 구축을 담당하고 있습니다. 사내 LLM API 게이트웨이, Agent/MCP 자동 배포 플랫폼, EKS 기반 클라우드 개발 환경을 구축·운영하며, AI 서비스의 배포 자동화, 운영 안정성, 사용량 관리, 모니터링 체계를 고도화하고 있습니다. 또한 도메인별 AI Agent 개발에 참여해 현업 요구사항을 Agent 워크플로우로 구현하고, VS사업본부 AI Agent 구축 실무자 과정의 사내 강사로 활동하며 조직 내 AI 활용 및 개발 역량 확산을 지원하고 있습니다.",
+        en: "I work on AI agent development and LLMOps/AIOps systems for the vehicle electronics business domain. This includes operating an internal LLM API gateway, an Agent/MCP auto-deployment platform, and EKS-based cloud development environments, while improving deployment automation, operational reliability, usage management, and monitoring for AI services. I also participate in domain-specific AI agent projects, translate business requirements into agent workflows, and support internal AI adoption as an instructor for the VS Company's hands-on AI Agent training program."
       },
       tags: []
     }
