@@ -133,13 +133,24 @@
       section { margin-bottom:1.5rem; }
       .entry, .research-block, .pub-card { break-inside:avoid; page-break-inside:avoid; }
       figure.media { break-inside:avoid; page-break-inside:avoid; max-width:100%; }
+      /* 웹과 동일: 이미지는 카드 폭에 꽉 차게. 단 세로로 긴 이미지는 높이만 제한해 빈 페이지 방지 */
+      figure.media img, .video-thumbnail {
+        display:block; width:100%; height:auto;
+        max-width:100%; max-height:16cm; object-fit:contain;
+      }
+      /* media-row: 웹처럼 나란히 유지하고, 한 쌍이 페이지 중간에서 갈라지지 않게 */
+      .media-row { break-inside:avoid; page-break-inside:avoid; }
+      .media-row figure.media img { max-height:11cm; }
+      .media-row figure.media-video .video-thumbnail {
+        flex:1; min-height:0; width:100%; height:auto;
+        max-height:none; object-fit:cover;
+      }
       hr { margin:1.25rem 0; border-color:#ddd; }
       .tag { border:1px solid #ccc; background:#f5f5f5 !important; color:#555 !important; }
       .ctrl, #btn-pdf, #btn-lang, #btn-theme { display:none !important; }
       figure.media video { display:none !important; }
       .video-thumbnail { display:block !important; width:100%; height:auto; }
-      .media-row { flex-wrap:wrap; }
-      .media-row figure.media-video { flex:0 0 100%; }
+      .media-row figure.media-video { flex:0 0 36%; }
       .print-url { display:block !important; text-align:center; font-size:8pt; color:#888; padding-top:1rem; border-top:1px solid #ddd; margin-top:2rem; }
     }
     .print-url { display:none; }
@@ -225,7 +236,7 @@ function renderMedia(m) {
     const rate = m.rate || 1;
     return `<figure class="media media-video"><video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${rate};"></video>${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
   }
-  return `<figure class="media"><img src="${m.src}" alt="${t(m.alt)}" loading="lazy">${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+  return `<figure class="media"><img src="${m.src}" alt="${t(m.alt)}">${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
 }
 function renderMediaList(list) {
   if (!list || list.length === 0) return '';
@@ -391,15 +402,24 @@ render();
 // ── PDF용 영상 썸네일 캡처 ────────────────────────────
 function captureFrame(video) {
   try {
-    const c = document.createElement('canvas');
-    c.className = 'video-thumbnail';
+    if (!video.videoWidth) return false;
+    let c = video._thumbCanvas;
+    if (!c) {
+      c = document.createElement('canvas');
+      c.className = 'video-thumbnail';
+      video._thumbCanvas = c;
+      video.parentNode.insertBefore(c, video);
+    }
     c.width = video.videoWidth || 640;
     c.height = video.videoHeight || 360;
     c.getContext('2d').drawImage(video, 0, 0, c.width, c.height);
-    video.parentNode.insertBefore(c, video);
-  } catch(e) {}
+    video._thumbDone = true;
+    return true;
+  } catch(e) { return false; }
 }
 document.querySelectorAll('figure.media video').forEach(function(video) {
+  // 인쇄 시 프레임이 반드시 존재하도록 미리 로드
+  video.preload = 'auto';
   const isDemo2 = video.src.includes('demo2');
   if (isDemo2) {
     video.addEventListener('loadedmetadata', function() {
@@ -407,16 +427,21 @@ document.querySelectorAll('figure.media video').forEach(function(video) {
     });
     video.addEventListener('seeked', function() {
       if (this._thumbDone) return;
-      this._thumbDone = true;
       captureFrame(video);
     });
   } else {
     video.addEventListener('canplay', function() {
       if (this._thumbDone) return;
-      this._thumbDone = true;
       captureFrame(video);
     });
   }
+});
+
+// 인쇄 직전, 아직 캡처되지 않은 영상은 현재 프레임이라도 즉시 캡처
+window.addEventListener('beforeprint', function() {
+  document.querySelectorAll('figure.media video').forEach(function(video) {
+    if (!video._thumbDone) captureFrame(video);
+  });
 });
 
 </script>
