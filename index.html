@@ -89,8 +89,22 @@
       .role-badge.solo, .role-badge.team { color:#555 !important; }
       .ctrl, #btn-pdf, #btn-lang, #btn-theme { display:none !important; }
       .print-url { display:block !important; text-align:center; font-size:8pt; color:#888; padding-top:1rem; border-top:1px solid #ddd; margin-top:2rem; }
+      /* PDF 상단 배너: QR + 링크 → 자연스럽게 온라인 사이트로 유도 */
+      .pdf-cta {
+        display:flex !important; align-items:center; gap:.9rem;
+        border:1px solid #cdd6e4; border-radius:8px;
+        padding:.65rem .85rem; margin-bottom:1.5rem; background:#f6f9fd;
+        text-decoration:none;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact;
+      }
+      .pdf-cta-text { display:flex; flex-direction:column; }
+      .pdf-cta-qr { width:64px; height:64px; flex-shrink:0; display:block; }
+      .pdf-cta-title { font-weight:700; font-size:10.5pt; color:#111; letter-spacing:-.01em; }
+      .pdf-cta-link { display:inline-block; margin-top:.1rem; font-size:9.5pt; color:#1a5fb4 !important; text-decoration:underline; font-weight:600; }
+      .pdf-cta-sub { font-size:8pt; color:#667; margin-top:.2rem; }
     }
     .print-url { display:none; }
+    .pdf-cta { display:none; }
   </style>
 </head>
 <body>
@@ -223,12 +237,24 @@ function render() {
     ? `<a href="/"><img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" /></a>`
     : '';
 
+  // PDF에서만 보이는 상단 배너: QR 스캔 또는 링크 클릭으로 온라인 사이트 이동
+  const SITE_URL = 'https://haseongheon.github.io/';
+  const pdfCta = `
+    <a class="pdf-cta" href="${SITE_URL}" target="_blank" rel="noopener">
+      <img class="pdf-cta-qr" src="assets/qr-site.svg" alt="Website QR code" />
+      <span class="pdf-cta-text">
+        <span class="pdf-cta-title">Ha SeongHeon's page</span>
+        <span class="pdf-cta-link">haseongheon.github.io ↗</span>
+      </span>
+    </a>`;
+
   // sections
   const sections = DATA.sections
     .map((key, i) => renderSection(key) + (i < DATA.sections.length - 1 ? '<hr>' : ''))
     .join('');
 
   document.getElementById('main').innerHTML = `
+    ${pdfCta}
     <header class="site-header">
       ${photo}
       <h1>${t(p.name)}</h1>

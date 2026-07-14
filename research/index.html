@@ -91,7 +91,10 @@
     .block-body{font-size:.875rem;color:var(--muted);line-height:1.75;transition:color .25s;}
     .block-body p+p{margin-top:.6rem;}
 
-    figure.media{margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg);transition:border-color .25s,background .25s;}
+    figure.media{position:relative;margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg);transition:border-color .25s,background .25s;}
+    /* 영상 링크: 화면에서는 숨김(영상이 실제로 재생되므로), PDF에서만 클릭 가능 */
+    .video-print-link{display:none;}
+    .video-web-link{display:none;}
     figure.media img{display:block;width:100%;height:auto;padding:0.5rem;box-sizing:border-box;}
     figure.media video{display:block;width:100%;height:auto;}
     figure.media figcaption{font-size:.75rem;color:var(--dim);padding:.55rem .85rem;border-top:1px solid var(--border);text-align:center;line-height:1.6;transition:color .25s,border-color .25s;}
@@ -151,9 +154,46 @@
       figure.media video { display:none !important; }
       .video-thumbnail { display:block !important; width:100%; height:auto; }
       .media-row figure.media-video { flex:0 0 36%; }
+      /* PDF: 영상 자리 전체가 클릭 가능 + 가운데 재생(▶) 배지로 클릭 유도 */
+      .video-print-link {
+        display:flex; align-items:center; justify-content:center;
+        position:absolute; top:0; left:0; right:0; bottom:0; z-index:3;
+        text-decoration:none;
+      }
+      .video-print-link::before {
+        content:"\25B6";
+        display:flex; align-items:center; justify-content:center;
+        width:44px; height:44px; padding-left:4px; box-sizing:border-box;
+        font-size:16pt; color:#fff;
+        background:rgba(26,95,180,.9); border-radius:50%;
+        border:2px solid rgba(255,255,255,.9);
+        box-shadow:0 1px 5px rgba(0,0,0,.35);
+      }
+      /* PDF: 캡션 옆 '영상 보기' 버튼 (알약형) */
+      .video-web-link {
+        display:inline-block; position:relative; z-index:4;
+        margin-left:.5rem; padding:.12rem .6rem;
+        background:#1a5fb4; color:#fff !important;
+        border-radius:999px; font-weight:700; font-size:8pt;
+        text-decoration:none; white-space:nowrap; vertical-align:middle;
+      }
       .print-url { display:block !important; text-align:center; font-size:8pt; color:#888; padding-top:1rem; border-top:1px solid #ddd; margin-top:2rem; }
+      /* PDF 상단 배너: QR + 링크 → 자연스럽게 온라인 포트폴리오로 유도 */
+      .pdf-cta {
+        display:flex !important; align-items:center; gap:.9rem;
+        border:1px solid #cdd6e4; border-radius:8px;
+        padding:.65rem .85rem; margin-bottom:1.5rem; background:#f6f9fd;
+        text-decoration:none;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact;
+      }
+      .pdf-cta-text { display:flex; flex-direction:column; }
+      .pdf-cta-qr { width:64px; height:64px; flex-shrink:0; display:block; }
+      .pdf-cta-title { font-weight:700; font-size:10.5pt; color:#111; letter-spacing:-.01em; }
+      .pdf-cta-link { display:inline-block; margin-top:.1rem; font-size:9.5pt; color:#1a5fb4 !important; text-decoration:underline; font-weight:600; }
+      .pdf-cta-sub { font-size:8pt; color:#667; margin-top:.2rem; }
     }
     .print-url { display:none; }
+    .pdf-cta { display:none; }
     .video-thumbnail{display:none;width:100%;height:auto;}
   </style>
 </head>
@@ -227,14 +267,30 @@ const FOCALKLD_FORMULA = `<div class="formula-eqs">
   <div class="formula-line formula-cont">+ &Sigma;<sub class="idx">i</sub> e<sup><i>P</i>(i)</sup>(1&minus;<i>P</i>(i))<sup>&gamma;</sup> <i>P</i>(i) log <i>P</i>(i)</div>
 </div>`;
 
+// PDF에서 영상 썸네일을 누르면 실제 영상이 재생되는 사이트로 이동
+const SITE_BASE = 'https://haseongheon.github.io/research/';
+function videoUrl(src) {
+  return /^https?:/.test(src) ? src : SITE_BASE + src.replace(/^\.?\//, '');
+}
+function videoCaption(m, url) {
+  const label = t({ ko: '▶ 영상 보기', en: '▶ Watch video' });
+  const webLink = `<a class="video-web-link" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+  return `<figcaption>${m.caption ? t(m.caption) : ''}${webLink}</figcaption>`;
+}
+function videoOverlay(url) {
+  return `<a class="video-print-link" href="${url}" target="_blank" rel="noopener" aria-label="Watch video on web"></a>`;
+}
+
 function renderMedia(m) {
   if (m.formula) {
     const videoHtml = m.video ? `<video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${m.rate||1};"></video>` : '';
-    return `<figure class="media formula-card">${videoHtml}${FOCALKLD_FORMULA}${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+    const cap = m.video ? videoCaption(m, videoUrl(m.video)) : (m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : '');
+    return `<figure class="media formula-card">${videoHtml}${FOCALKLD_FORMULA}${cap}</figure>`;
   }
   if (m.video) {
     const rate = m.rate || 1;
-    return `<figure class="media media-video"><video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${rate};"></video>${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
+    const url = videoUrl(m.video);
+    return `<figure class="media media-video"><video src="${m.video}" controls autoplay loop muted playsinline onplay="this.playbackRate=${rate};"></video>${videoOverlay(url)}${videoCaption(m, url)}</figure>`;
   }
   return `<figure class="media"><img src="${m.src}" alt="${t(m.alt)}">${m.caption ? `<figcaption>${t(m.caption)}</figcaption>` : ''}</figure>`;
 }
@@ -360,11 +416,22 @@ function render() {
     ? `<a href="../"><img src="${p.photo}" alt="${t(p.name)}" class="profile-photo" /></a>`
     : '';
 
+  // PDF에서만 보이는 상단 배너: QR 스캔 또는 링크 클릭으로 온라인 포트폴리오 이동
+  const pdfCta = `
+    <a class="pdf-cta" href="${SITE_BASE}" target="_blank" rel="noopener">
+      <img class="pdf-cta-qr" src="assets/qr-portfolio.svg" alt="Portfolio QR code" />
+      <span class="pdf-cta-text">
+        <span class="pdf-cta-title">Ha SeongHeon's page</span>
+        <span class="pdf-cta-link">haseongheon.github.io/research ↗</span>
+      </span>
+    </a>`;
+
   const sections = DATA.sections
     .map((key, i) => renderSection(key) + (i < DATA.sections.length - 1 ? '<hr>' : ''))
     .join('');
 
   document.getElementById('main').innerHTML = `
+    ${pdfCta}
     <header class="site-header">
       ${photo}
       <h1>${t(p.name)}</h1>
