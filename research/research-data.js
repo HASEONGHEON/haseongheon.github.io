@@ -45,12 +45,13 @@ const DATA = {
         ko: "기계공학사",
         en: "B.S. in Mechanical Engineering"
       }
-    },
-    {
-      title: { ko: "대륜고등학교", en: "Daeryun High School" },
-      date:  "– 2016.02",
-      sub: { ko: "졸업", en: "Graduated" }
     }
+    // ,
+    // {
+    //   title: { ko: "대륜고등학교", en: "Daeryun High School" },
+    //   date:  "– 2016.02",
+    //   sub: { ko: "졸업", en: "Graduated" }
+    // }
   ],
 
   // ── 연구 (Featured Research) ──────────────────────────
