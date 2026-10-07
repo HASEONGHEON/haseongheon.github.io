@@ -101,6 +101,20 @@ const DATA = {
       tags: ["opencode", "messenger", "Vertex AI"]
     },
     {
+      title: { ko: "Agent Ops", en: "Agent Ops" },
+      date:  "2026.08 - Present",
+      role: { type: "team", detail: { ko: "평가 파이프라인 설계·구현", en: "Evaluation Pipeline Design & Development" } },
+      sub: {
+        ko: "코딩 에이전트와 LLM 모델을 비교하는 평가·운영 환경",
+        en: "Evaluation and Operations for Coding Agents and LLMs"
+      },
+      body: {
+        ko: "코딩 에이전트의 실제 작업 결과와 모델별 성능·비용을 함께 비교할 수 있는 평가 환경을 만들고 있습니다. 평가를 Kubernetes Job으로 실행하고 결과를 MLflow에 기록해 반복 가능한 모델 선택과 운영의 기반을 마련했습니다.",
+        en: "I am building an evaluation environment that compares coding agents in real tasks alongside model performance and cost. Running evaluations as Kubernetes Jobs and tracking results in MLflow lays the groundwork for repeatable model selection and operations."
+      },
+      tags: ["MLflow", "LiteLLM", "Kubernetes", "OpenCode"]
+    },
+    {
       title: { ko: "AI Agent", en: "AI Agent" },
       date:  "2025.02 - Present",
       role: { type: "team", detail: { ko: "현업 협업 · ETL 파이프라인 · 인덱스 설계", en: "Business Collaboration · ETL Pipeline · Index Design" } },
@@ -129,6 +143,10 @@ const DATA = {
     {
       label: "AI Agent",
       tags: ["LangChain", "LangGraph", "RAG", "MCP"]
+    },
+    {
+      label: "LLMOps & Evaluation",
+      tags: ["MLflow", "LiteLLM", "OpenCode", "Kubernetes Jobs"]
     },
   ]
 };
