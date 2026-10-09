@@ -51,6 +51,7 @@
     .entry-date{font-size:.775rem;color:var(--muted);white-space:nowrap;transition:color .25s;}
     .entry-sub{font-size:.8125rem;color:var(--muted);margin-bottom:.5rem;transition:color .25s;}
     .entry-body{font-size:.875rem;color:var(--muted);line-height:1.75;transition:color .25s;}
+    .entry-achievement{font-size:.875rem;color:var(--text);line-height:1.75;margin-top:.4rem;transition:color .25s;}
     .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;}
     .tag{font-size:.7rem;font-weight:500;padding:.2rem .55rem;border-radius:4px;background:var(--tag-bg);color:var(--tag-text);transition:background .25s,color .25s;letter-spacing:.01em;}
     hr{border:none;border-top:1px solid var(--border);margin:2.75rem 0;transition:border-color .25s;}
@@ -179,6 +180,7 @@ function renderEntry(item) {
   const title = t(item.title);
   const sub   = item.sub  ? `<p class="entry-sub">${t(item.sub)}</p>` : '';
   const body  = item.body ? `<div class="entry-body">${t(item.body)}</div>` : '';
+  const achievement = item.achievement ? `<div class="entry-achievement">${t(item.achievement)}</div>` : '';
   const date  = item.date ? `<span class="entry-date">${item.date}</span>` : '';
   const role  = renderRoleBadge(item.role);
   return `
@@ -190,6 +192,7 @@ function renderEntry(item) {
       ${role}
       ${sub}
       ${body}
+      ${achievement}
       ${renderTags(item.tags)}
     </div>`;
 }
